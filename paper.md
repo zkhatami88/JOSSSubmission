@@ -9,6 +9,9 @@ authors:
   - name: Patrick Diehl
     orcid: 0000-0003-3922-8419
     affiliation: "1" # (Multiple affiliations must be quoted)
+  - name: Weile Wei
+    orcid: 0000-0002-3065-4959
+    affiliation: "1" # (Multiple affiliations must be quoted)
   - name: Author will be ordered alphabetical 
     affiliation: 2
 affiliations:
