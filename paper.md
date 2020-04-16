@@ -9,7 +9,7 @@ authors:
   - name: Patrick Diehl
     orcid: 0000-0003-3922-8419
     affiliation: "1" # (Multiple affiliations must be quoted)
-  - name: Author Without ORCID
+  - name: Author will be ordered alphabetical 
     affiliation: 2
 affiliations:
  - name: Center of Computation \& Technology, Louisiana State University 
