@@ -43,7 +43,7 @@ We would also like to thank the following organizations for granting us
 allocations of their compute resources: LSU HPC, LONI, XSEDE, NERSC, CSCS/ETHZ,
 and the Gauss Center for Supercomputing.
 
-HPX is currently funded by:
+HPX has been funded by:
 
 - The National Science Foundation through awards 1240655 (STAR), 1339782
   (STORM), and 1737785 (Phylanx).
