@@ -12,6 +12,9 @@ authors:
   - name: Hartmut Kaiser
     orcid: 0000-0002-8712-2806
     affiliation: "1" # (Multiple affiliations must be quoted)
+  - name: Thomas Heller
+    orcid: 0000-0003-2620-9438
+    affiliation: "2"
   - name: Weile Wei
     orcid: 0000-0002-3065-4959
     affiliation: "1" # (Multiple affiliations must be quoted)
@@ -20,8 +23,10 @@ authors:
 affiliations:
  - name: Center of Computation \& Technology, Louisiana State University 
    index: 1
- - name: Institution 2
+ - name: Exasol
    index: 2
+ - name: Institution
+   index: 3
 date: 13 April 2020
 bibliography: paper.bib
 
