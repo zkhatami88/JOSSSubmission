@@ -12,6 +12,9 @@ authors:
   - name: Hartmut Kaiser
     orcid: 0000-0002-8712-2806
     affiliation: "1" # (Multiple affiliations must be quoted)
+  - name: Nikunj Gupta
+    orcid: 0000-0003-0525-3667
+    affiliation: "3" # (Multiple affiliations must be quoted)
   - name: Thomas Heller
     orcid: 0000-0003-2620-9438
     affiliation: "2"
@@ -25,8 +28,10 @@ affiliations:
    index: 1
  - name: Exasol
    index: 2
- - name: Institution
+ - name: Indian Institute of Technology, Roorkee, India
    index: 3
+ - name: Institution
+   index: 4
 date: 13 April 2020
 bibliography: paper.bib
 
