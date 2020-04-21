@@ -24,6 +24,15 @@ authors:
   - name: Weile Wei
     orcid: 0000-0002-3065-4959
     affiliation: "1"
+  - name: John Biddiscombe
+    orcid: ???
+    affiliation: "4"
+  - name: Auriane Reverdell
+    orcid: ???
+    affiliation: "4"
+  - name: Mikael Simberg
+    orcid: ???
+    affiliation: "4"
   - name: Author will be ordered alphabetical 
     affiliation: "2" # (Multiple affiliations must be quoted)
 affiliations:
@@ -33,8 +42,10 @@ affiliations:
    index: 2
  - name: Indian Institute of Technology, Roorkee, India
    index: 3
- - name: Institution
+ - name: Swiss National Supercomputing Centre
    index: 4
+ - name: Institution
+   index: 5
 date: 13 April 2020
 bibliography: paper.bib
 
