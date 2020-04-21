@@ -6,23 +6,26 @@ tags:
   - parallelsim
   - distributed  
 authors:
+  - name: Parsa Amini
+    orcid: 0000-0002-6439-8404
+    affiliation: "1"
   - name: Patrick Diehl
     orcid: 0000-0003-3922-8419
-    affiliation: "1" # (Multiple affiliations must be quoted)
-  - name: Hartmut Kaiser
-    orcid: 0000-0002-8712-2806
-    affiliation: "1" # (Multiple affiliations must be quoted)
+    affiliation: "1"
   - name: Nikunj Gupta
     orcid: 0000-0003-0525-3667
-    affiliation: "3" # (Multiple affiliations must be quoted)
+    affiliation: "3"
   - name: Thomas Heller
     orcid: 0000-0003-2620-9438
     affiliation: "2"
+  - name: Hartmut Kaiser
+    orcid: 0000-0002-8712-2806
+    affiliation: "1"
   - name: Weile Wei
     orcid: 0000-0002-3065-4959
-    affiliation: "1" # (Multiple affiliations must be quoted)
+    affiliation: "1"
   - name: Author will be ordered alphabetical 
-    affiliation: 2
+    affiliation: "2" # (Multiple affiliations must be quoted)
 affiliations:
  - name: Center of Computation \& Technology, Louisiana State University 
    index: 1
