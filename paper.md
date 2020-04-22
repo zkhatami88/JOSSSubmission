@@ -41,6 +41,9 @@ authors:
   - name: Mikael Simberg
     orcid: 0000-0002-7238-8935
     affiliation: "4"
+  - name: Zahra Khatami
+    orcid: 0000-0001-6654-6856
+    affiliation: "7"
   - name: Author will be ordered alphabetical 
     affiliation: "2" # (Multiple affiliations must be quoted)
 affiliations:
@@ -56,6 +59,8 @@ affiliations:
    index: 5
  - name: Ste$||ar$ group
    index: 6
+ - name: Oracle
+   index: 7
 date: 13 April 2020
 bibliography: paper.bib
 
