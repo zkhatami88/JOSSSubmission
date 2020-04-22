@@ -57,7 +57,7 @@ affiliations:
    index: 4
  - name: NVIDIA
    index: 5
- - name: STE$||AR$ Group
+ - name: STE$||$AR Group
    index: 6
  - name: Oracle
    index: 7
