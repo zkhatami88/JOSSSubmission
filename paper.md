@@ -61,7 +61,7 @@ affiliations:
    index: 6
  - name: Oracle
    index: 7
-date: 13 April 2020
+date: \today
 bibliography: paper.bib
 
 ---
