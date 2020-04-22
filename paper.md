@@ -12,7 +12,7 @@ authors:
   - name: Bryce Adelstein Lelbach
     orcid: 0000-0002-7995-5226
     affiliation: "5"
-  - name: Agustín Bergé
+  - name: Agustín Berge
     affiliation: "6"
   - name: Patrick Diehl
     orcid: 0000-0003-3922-8419
