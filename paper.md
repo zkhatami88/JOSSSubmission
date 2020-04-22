@@ -9,6 +9,9 @@ authors:
   - name: Parsa Amini
     orcid: 0000-0002-6439-8404
     affiliation: "1"
+  - name: Bryce Adelstein Lelbach
+    orcid: 0000-0002-7995-5226
+    affiliation: "5"
   - name: Patrick Diehl
     orcid: 0000-0003-3922-8419
     affiliation: "1"
@@ -44,6 +47,8 @@ affiliations:
    index: 3
  - name: Swiss National Supercomputing Centre
    index: 4
+ - name: NVIDIA
+   index: 5
  - name: Institution
    index: 5
 date: 13 April 2020
