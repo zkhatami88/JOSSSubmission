@@ -1,5 +1,5 @@
 ---
-title: 'The C++ Standard Library for Parallelism and Concurrency'
+title: 'HPX - The C++ Standard Library for Parallelism and Concurrency'
 tags:
   - concurrency
   - task-based run time system
@@ -14,6 +14,9 @@ authors:
     affiliation: "5"
   - name: Agustín Berge
     affiliation: "6"
+  - name: John Biddiscombe
+    orcid: 0000-0002-6552-2833
+    affiliation: "4"
   - name: Patrick Diehl
     orcid: 0000-0003-3922-8419
     affiliation: "1"
@@ -26,24 +29,21 @@ authors:
   - name: Hartmut Kaiser
     orcid: 0000-0002-8712-2806
     affiliation: "1"
-  - name: Bibek Wagle
-    orcid: 0000-0001-6619-7115
-    affiliation: "1"
-  - name: Weile Wei
-    orcid: 0000-0002-3065-4959
-    affiliation: "1"
-  - name: John Biddiscombe
-    orcid: 0000-0002-6552-2833
-    affiliation: "4"
+  - name: Zahra Khatami
+    orcid: 0000-0001-6654-6856
+    affiliation: "7"
   - name: Auriane Reverdell
     orcid: 0000-0002-5531-0458
     affiliation: "4"
   - name: Mikael Simberg
     orcid: 0000-0002-7238-8935
     affiliation: "4"
-  - name: Zahra Khatami
-    orcid: 0000-0001-6654-6856
-    affiliation: "7"
+  - name: Bibek Wagle
+    orcid: 0000-0001-6619-7115
+    affiliation: "1"
+  - name: Weile Wei
+    orcid: 0000-0002-3065-4959
+    affiliation: "1"
   - name: Author will be ordered alphabetical 
     affiliation: "2" # (Multiple affiliations must be quoted)
 affiliations:
