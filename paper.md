@@ -12,6 +12,8 @@ authors:
   - name: Bryce Adelstein Lelbach
     orcid: 0000-0002-7995-5226
     affiliation: "5"
+  - name: Agustín Bergé
+    affiliation: "6"
   - name: Patrick Diehl
     orcid: 0000-0003-3922-8419
     affiliation: "1"
@@ -52,8 +54,8 @@ affiliations:
    index: 4
  - name: NVIDIA
    index: 5
- - name: Institution
-   index: 5
+ - name: Ste$||ar$ group
+   index: 6
 date: 13 April 2020
 bibliography: paper.bib
 
@@ -61,7 +63,7 @@ bibliography: paper.bib
 
 # Summary
 
-HPX is a C++ Standard Library for Concurrency and Parallelism `[@heller2017hpx]`. It implements all of the corresponding facilities as defined by the C++ Standard. Additionally, in HPX we implement functionalities proposed as part of the ongoing C++ standardization process. We also extend the C++ Standard APIs to the distributed case.
+HPX is a C++ Standard Library for Concurrency and Parallelism. It implements all of the corresponding facilities as defined by the C++ Standard. Additionally, in HPX we implement functionalities proposed as part of the ongoing C++ standardization process. We also extend the C++ Standard APIs to the distributed case.
 
 The goal of HPX is to create a high quality, freely available, open source implementation of a new programming model for conventional systems, such as classic Linux based Beowulf clusters or multi-socket highly parallel SMP nodes. At the same time, we want to have a very modular and well designed runtime system architecture which would allow us to port our implementation onto new computer system architectures. We want to use real-world applications to drive the development of the runtime system, coining out required functionalities and converging onto a stable API which will provide a smooth migration path for developers.
 
