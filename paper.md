@@ -28,7 +28,7 @@ authors:
     orcid: 0000-0002-6552-2833
     affiliation: "4"
   - name: Auriane Reverdell
-    orcid: ???
+    orcid: 0000-0002-5531-0458
     affiliation: "4"
   - name: Mikael Simberg
     orcid: 0000-0002-7238-8935
