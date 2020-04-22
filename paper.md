@@ -68,11 +68,17 @@ bibliography: paper.bib
 
 # Summary
 
-HPX is a C++ Standard Library for Concurrency and Parallelism [@heller2017hpx; @hpx_github] It implements all of the corresponding facilities as defined by the C++ Standard. Additionally, in HPX we implement functionalities proposed as part of the ongoing C++ standardization process. We also extend the C++ Standard APIs to the distributed case.
+HPX is a C++ Standard Library for Concurrency and Parallelism [@heller2017hpx; @hpx_github] for distributed and parallel prgramming based on an Asynchronous Many Task (AMT) runtime system. It implements all of the corresponding facilities as defined by the ISO C++ Standard. Additionally, in HPX we implement functionalities proposed as part of the ongoing C++ standardization process. 
 
-The goal of HPX is to create a high quality, freely available, open source implementation of a new programming model for conventional systems, such as classic Linux based Beowulf clusters or multi-socket highly parallel SMP nodes. At the same time, we want to have a very modular and well designed runtime system architecture which would allow us to port our implementation onto new computer system architectures. We want to use real-world applications to drive the development of the runtime system, coining out required functionalities and converging onto a stable API which will provide a smooth migration path for developers.
 
-The API exposed by HPX is not only modeled after the interfaces defined by the C++11/14/17/20 ISO standard, it also adheres to the programming guidelines used by the Boost collection of C++ libraries. We aim to improve the scalability of today's applications and to expose new levels of parallelism which are necessary to take advantage of the exascale systems of the future.
+- Thread Manager [@kaiser2009parallex]
+- Performance counters [@grubel2016dynamic]
+- Parcelport [@kaiser2009parallex; @biddiscombe2017zero] as an active-message networking layer that enables running functions close to the objects they operate on. This also
+implicitly overlaps computation and communication. For the communication between nodes the tcp protocol, the Message passing Interface (MPI), or libfabric [@daiss2019piz] is supported.
+- Active Global Address Space (AGAS) [@kaiser2014hpx] that supports load balancing via object migration and enables exposing a uniform API for local and remote execution.
+- Autonomic Performance Environment for Exascale (APEX) [@huck2015autonomic], an in-situ profiling and adaptive tuning framework.
+- Integration of GPUs with HPX.Compute [@copik2017using] and HPXCL [@diehl2018integration] for providing a single source solution to heterogeneity.
+
 
 
 # Acknowledgements
