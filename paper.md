@@ -24,11 +24,11 @@ authors:
   - name: Hartmut Kaiser
     orcid: 0000-0002-8712-2806
     affiliation: "1"
-  - name: Weile Wei
-    orcid: 0000-0002-3065-4959
-    affiliation: "1"
   - name: Bibek Wagle
     orcid: 0000-0001-6619-7115
+    affiliation: "1"
+  - name: Weile Wei
+    orcid: 0000-0002-3065-4959
     affiliation: "1"
   - name: Author will be ordered alphabetical 
     affiliation: "2" # (Multiple affiliations must be quoted)
