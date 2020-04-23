@@ -68,18 +68,19 @@ bibliography: paper.bib
 
 # Summary
 
-HPX is a C++ Standard Library for Concurrency and Parallelism [@heller2017hpx; @hpx_github] for distributed and parallel prgramming based on an Asynchronous Many Task (AMT) runtime system. It implements all of the corresponding facilities as defined by the ISO C++ Standard. Additionally, in HPX we implement functionalities proposed as part of the ongoing C++ standardization process. 
+HPX is a C++ Standard Library for Concurrency and Parallelism [@heller2017hpx; @hpx_github; @tabbal2011preliminary] for distributed and parallel prgramming based on an Asynchronous Many Task (AMT) runtime system. It implements all of the corresponding facilities as defined by the ISO C++ Standard. Additionally, in HPX we implement functionalities proposed as part of the ongoing C++ standardization process. 
 
+In the following, the compoments of HPX and their references are listed:
 
-- Thread Manager [@kaiser2009parallex]
+- Thread Manager [@kaiser2009parallex] handles the light-weighted user level threads. HPX provides follwing pre-defined scheduling olicues: static, thread local, and hierarchical.
 - Performance counters [@grubel2016dynamic]
 - Parcelport [@kaiser2009parallex; @biddiscombe2017zero] as an active-message networking layer that enables running functions close to the objects they operate on. This also
 implicitly overlaps computation and communication. For the communication between nodes the tcp protocol, the Message passing Interface (MPI), or libfabric [@daiss2019piz] is supported.
 - Active Global Address Space (AGAS) [@kaiser2014hpx] that supports load balancing via object migration and enables exposing a uniform API for local and remote execution.
 - Autonomic Performance Environment for Exascale (APEX) [@huck2015autonomic], an in-situ profiling and adaptive tuning framework.
-- Integration of GPUs with HPX.Compute [@copik2017using] and HPXCL [@diehl2018integration] for providing a single source solution to heterogeneity.
+- Integration of GPUs with HPX.Compute [@copik2017using] and HPXCL [@diehl2018integration; @martin_stumpf_2018_1409043] for providing a single source solution to heterogeneity.
 
-
+HPX is utilzed in a diverse set of applications: Octo-Tiger [@@daiss2019piz; @heller2019harnessing; @pfander2018accelerating], a astrophysic code for stellar mergers, libGeoDecomp [@Schafer:2008:LGL:1431669.1431721], a library for stencil code based computer simulations, and NLMech [@diehl2018implementation], a simulation tool for non-local models, e.g. Peridyanmics.
 
 # Acknowledgements
 
