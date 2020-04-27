@@ -73,10 +73,10 @@ HPX is a C++ Standard Library for Concurrency and Parallelism [@heller2017hpx; @
 In the following, the compoments of HPX and their references are listed:
 
 - Thread Manager [@kaiser2009parallex] handles the light-weighted user level threads. HPX provides follwing pre-defined scheduling olicues: static, thread local, and hierarchical.
-- Performance counters [@grubel2016dynamic]
 - Parcelport [@kaiser2009parallex; @biddiscombe2017zero] as an active-message networking layer that enables running functions close to the objects they operate on. This also
 implicitly overlaps computation and communication. For the communication between nodes the tcp protocol, the Message passing Interface (MPI), or libfabric [@daiss2019piz] is supported.
 - Active Global Address Space (AGAS) [@kaiser2014hpx] that supports load balancing via object migration and enables exposing a uniform API for local and remote execution.
+- Performance counters [@grubel2016dynamic], which are mapped using a unique symbolic name to AGAS for the introspection at computaton time by the application or the run time system. HPX provides performance counters for its netwoerking, global addressing, thread scheduling, and an iterface to write application specific performance counters.
 - Autonomic Performance Environment for Exascale (APEX) [@huck2015autonomic], an in-situ profiling and adaptive tuning framework.
 - Integration of GPUs with HPX.Compute [@copik2017using] and HPXCL [@diehl2018integration; @martin_stumpf_2018_1409043] for providing a single source solution to heterogeneity.
 
