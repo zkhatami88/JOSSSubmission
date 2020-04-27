@@ -32,6 +32,8 @@ authors:
   - name: Zahra Khatami
     orcid: 0000-0001-6654-6856
     affiliation: "7"
+  - name: Adrian S. Lemoine
+    affiliation: 6
   - name: Auriane Reverdell
     orcid: 0000-0002-5531-0458
     affiliation: "4"
