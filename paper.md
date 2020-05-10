@@ -73,19 +73,71 @@ bibliography: paper.bib
 
 # Summary
 
-HPX is a C++ Standard Library for Concurrency and Parallelism [@heller2017hpx; @hpx_github; @tabbal2011preliminary] for distributed and parallel prgramming based on an Asynchronous Many Task (AMT) runtime system. It implements all of the corresponding facilities as defined by the ISO C++ Standard. Additionally, in HPX we implement functionalities proposed as part of the ongoing C++ standardization process. 
+HPX is a C++ Library for Concurrency and Parallelism [@heller2017hpx; @hpx_github; @tabbal2011preliminary] 
+for distributed and parallel programming based on an Asynchronous Many Task (AMT) runtime system. 
+It implements the concurrency and parallelism facilities as defined by the ISO C++ Standard
+yet extends them to run in a distributed context. 
+Additionally, HPX implements functionalities proposed as part of the ongoing 
+C++ standardization process. 
 
-In the following, the compoments of HPX and their references are listed:
+The compoments of HPX and their references are listed below:
 
-- Thread Manager [@kaiser2009parallex] handles the light-weighted user level threads. HPX provides follwing pre-defined scheduling olicues: static, thread local, and hierarchical.
-- Parcelport [@kaiser2009parallex; @biddiscombe2017zero] as an active-message networking layer that enables running functions close to the objects they operate on. This also
-implicitly overlaps computation and communication. For the communication between nodes the tcp protocol, the Message passing Interface (MPI), or libfabric [@daiss2019piz] is supported.
-- Active Global Address Space (AGAS) [@kaiser2014hpx] that supports load balancing via object migration and enables exposing a uniform API for local and remote execution.
-- Performance counters [@grubel2016dynamic], which are mapped using a unique symbolic name to AGAS for the introspection at computaton time by the application or the run time system. HPX provides performance counters for its netwoerking, global addressing, thread scheduling, and an iterface to write application specific performance counters.
-- Autonomic Performance Environment for Exascale (APEX) [@huck2015autonomic], an in-situ profiling and adaptive tuning framework.
-- Integration of GPUs with HPX.Compute [@copik2017using] and HPXCL [@diehl2018integration; @martin_stumpf_2018_1409043] for providing a single source solution to heterogeneity.
+- **Thread Manager** [@kaiser2009parallex] The thread manager manages 
+    the light-weighted user level threads created by HPX. HPX provides 
+    follwing pre-defined scheduling olicues **(?)**: static, thread 
+    local, and hierarchical.
+- **Active Global Address Space (AGAS)** [@kaiser2014hpx]
+    To support distributed objects, HPX has implemented an address
+    resolution component similar to the PGAS model. **Citation**
+    This layer enables HPX to exposing a uniform API for local and 
+    remote execution. Unlike PGAS, however, AGAS provides the user 
+    with the ability to move global objects in a distributed system
+    without needing to create a new Global Identifier (GID)
+    This enables AGAS to support load balancing via object migration.
+    **More?**
+- **Parcelport** [@kaiser2009parallex; @biddiscombe2017zero] 
+    This component is an active-message networking layer. 
+    The parcelport is able to leverage AGAS in order to 
+    launch functions on global objects regardless of where 
+    they are in a distributed system.
+    Additionally its asynchronus protocol enables the 
+    parcelport to implicitly overlap communication and computation.
+    The parcelport is modular to suport multiple communication libary
+    backends. By default HPX supports tcp, Message passing Interface (MPI), 
+    and libfabric [@daiss2019piz].
+- **Performance counters** [@grubel2016dynamic]
+    HPX provides its users with a uniform suite of global counters 
+    to monitor system metrics. These counters have 
+    names registered with AGAS which enables the users to
+    easily query for different metrics at runtime. **(Check me)**
+    Additionally, HPX provides an API for users to create their
+    own counters to gather infromation customize to thier own applicaiton.
+    By default HPX provides performance counters for networking, 
+    AGAS performance, and thread scheduling.
+- **Autonomic Performance Environment for Exascale (APEX)** [@huck2015autonomic] 
+    Often, modern applications must adapt to runtime environments 
+    to ensure acceptable performance. APEX enables this flexibility 
+    by accepting user provided policies that are triggered by defined events.
+    In this way, features such as parcel coalescing **Cite** can adapt
+    to the current phase of an application or eve state of a system.
+- **Accelerator Support**
+    HPX has suport for two methods of integration with GPUs: 
+    HPXCL [@diehl2018integration; @martin_stumpf_2018_1409043] and HPX.Compute [@copik2017using]
+    HPXCL provides users the ability to manage GPU kernels through a 
+    global object. This enables HPX to coordinate the launcing and 
+    synchonization of CPU and GPU code. 
+    HPX.Compute [@copik2017using] aims to provide a single source 
+    solution to heterogeneity by automatically generating GPU kernels 
+    from C++ code. This enables HPX to launch both CPU and GPU kernels
+    as dictated by the current state of the system.
 
-HPX is utilzed in a diverse set of applications: Octo-Tiger [@@daiss2019piz; @heller2019harnessing; @pfander2018accelerating], a astrophysic code for stellar mergers, libGeoDecomp [@Schafer:2008:LGL:1431669.1431721], a library for stencil code based computer simulations, and NLMech [@diehl2018implementation], a simulation tool for non-local models, e.g. Peridyanmics.
+HPX is utilzed in a diverse set of applications: 
+Octo-Tiger [@@daiss2019piz; @heller2019harnessing; @pfander2018accelerating], 
+a astrophysic code for stellar mergers, 
+libGeoDecomp [@Schafer:2008:LGL:1431669.1431721], 
+a library for stencil code based computer simulations, 
+and NLMech [@diehl2018implementation], a simulation tool 
+for non-local models, e.g. Peridyanmics.
 
 # Acknowledgements
 
