@@ -75,15 +75,15 @@ bibliography: paper.bib
 
 HPX is a C++ Library for Concurrency and Parallelism [@heller2017hpx; @hpx_github; @tabbal2011preliminary] 
 for distributed and parallel programming based on an Asynchronous Many Task (AMT) runtime system. 
-It implements the concurrency and parallelism facilities as defined by the ISO C++ Standard
-yet extends them to run in a distributed context. 
-Additionally, HPX implements functionalities proposed as part of the ongoing 
-C++ standardization process. 
+Its main goal is to improve efficiency and scalability by increasing resource utilization and reducing synchronization through providing asynchronization and employing adaptive scheduling. HPX is able to significantly reduce the processor starvation and effective latencies while controlling overheads. 
+In addition to providing the scalable parallelisms, HPX implements the concurrency mechanisms and parallelism facilities as defined by the ISO C++ Standard yet extends them to run in a distributed context. Furthermore, HPX implements functionalities proposed as part of the ongoing C++ standardization process. [TODO: Maybe adding advantages of having hpx in c++ standardization compared to the other methods that are not?]
+
+[TODO: Maybe talking about HPX future and dataflow and execution policies after going into HPX components!?]
 
 The compoments of HPX and their references are listed below:
 
 - **Thread Manager** [@kaiser2009parallex] The thread manager manages 
-    the light-weighted user level threads created by HPX. HPX provides 
+    the light-weighted user level threads created by HPX. These light-weight threads have extremely short context switching times resulting in the reduced latencies even for very short operations. HPX provides 
     follwing pre-defined scheduling olicues **(?)**: static, thread 
     local, and hierarchical.
 - **Active Global Address Space (AGAS)** [@kaiser2014hpx]
