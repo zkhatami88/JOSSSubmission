@@ -64,7 +64,7 @@ affiliations:
    index: 6
  - name: Oracle
    index: 7
-date: \today
+date: 28.05.2020
 bibliography: paper.bib
 ---
 
