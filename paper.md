@@ -43,9 +43,9 @@ authors:
   - name: Auriane Reverdell
     orcid: 0000-0002-5531-0458
     affiliation: "4"
-#  - name: Shahrzad Shirzad
-#    orcid: 0000-0001-9496-8044
-#    affiliation: "1"
+  - name: Shahrzad Shirzad
+    orcid: 0000-0001-9496-8044
+    affiliation: "1"
   - name: Mikael Simberg
     orcid: 0000-0002-7238-8935
     affiliation: "4"
