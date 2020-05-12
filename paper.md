@@ -6,9 +6,9 @@ tags:
   - parallelsim
   - distributed  
 authors:
-#  - name: Parsa Amini
-#    orcid: 0000-0002-6439-8404
-#    affiliation: "1"
+  - name: Parsa Amini
+    orcid: 0000-0002-6439-8404
+    affiliation: "1"
 #  - name: Bryce Adelstein Lelbach
 #    orcid: 0000-0002-7995-5226
 #    affiliation: "5"
@@ -58,8 +58,8 @@ authors:
 #  - name: Author will be ordered alphabetical 
 #    affiliation: "2" # (Multiple affiliations must be quoted)
 affiliations:
-# - name: Center of Computation \& Technology, Louisiana State University 
-#   index: 1
+ - name: Center of Computation \& Technology, Louisiana State University 
+   index: 1
 # - name: Exasol
 #   index: 2
 # - name: Indian Institute of Technology, Roorkee, India
