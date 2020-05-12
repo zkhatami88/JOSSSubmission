@@ -1,7 +1,7 @@
 ---
 title: 'HPX - The C++ Standard Library for Parallelism and Concurrency'
-tags:
-  - concurrency 
+#tags:
+#  - concurrency 
 #  - task-based run time system
 #  - parallelsim
 #  - distributed  
