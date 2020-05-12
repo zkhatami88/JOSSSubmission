@@ -60,18 +60,18 @@ authors:
 affiliations:
  - name: Center of Computation \& Technology, Louisiana State University 
    index: 1
-# - name: Exasol
-#   index: 2
-# - name: Indian Institute of Technology, Roorkee, India
-#   index: 3
-# - name: Swiss National Supercomputing Centre
-#   index: 4
-# - name: NVIDIA
-#   index: 5
-# - name: STE$||$AR Group
-#   index: 6
-# - name: Oracle
-#   index: 7
+ - name: Exasol
+   index: 2
+ - name: Indian Institute of Technology, Roorkee, India
+   index: 3
+ - name: Swiss National Supercomputing Centre
+   index: 4
+ - name: NVIDIA
+   index: 5
+ - name: STE$||$AR Group
+   index: 6
+ - name: Oracle
+   index: 7
 date: \today
 bibliography: paper.bib
 ---
