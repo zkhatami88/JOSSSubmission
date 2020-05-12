@@ -35,28 +35,26 @@ authors:
   - name: Zahra Khatami
     orcid: 0000-0001-6654-6856
     affiliation: "7"
-  - name: Alireza Kheirkhahan
-    orcid: 0000-0002-4624-4647
-    affiliation: "1"
-#  - name: Adrian S. Lemoine
-#    affiliation: 6
-#  - name: Auriane Reverdell
-#    orcid: 0000-0002-5531-0458
-#    affiliation: "4"
+#  - name: Alireza Kheirkhahan
+#    orcid: 0000-0002-4624-4647
+#    affiliation: "1"
+  - name: Adrian S. Lemoine
+    affiliation: 6
+  - name: Auriane Reverdell
+    orcid: 0000-0002-5531-0458
+    affiliation: "4"
 #  - name: Shahrzad Shirzad
 #    orcid: 0000-0001-9496-8044
 #    affiliation: "1"
-#  - name: Mikael Simberg
-#    orcid: 0000-0002-7238-8935
-#    affiliation: "4"
-#  - name: Bibek Wagle
-#    orcid: 0000-0001-6619-7115
-#    affiliation: "1"
-#  - name: Weile Wei
-#    orcid: 0000-0002-3065-4959
-#    affiliation: "1"
-#  - name: Author will be ordered alphabetical 
-#    affiliation: "2" # (Multiple affiliations must be quoted)
+  - name: Mikael Simberg
+    orcid: 0000-0002-7238-8935
+    affiliation: "4"
+  - name: Bibek Wagle
+    orcid: 0000-0001-6619-7115
+    affiliation: "1"
+  - name: Weile Wei
+    orcid: 0000-0002-3065-4959
+    affiliation: "1"
 affiliations:
  - name: Center of Computation \& Technology, Louisiana State University 
    index: 1
