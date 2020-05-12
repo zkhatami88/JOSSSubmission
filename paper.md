@@ -1,11 +1,11 @@
 ---
 title: 'HPX - The C++ Standard Library for Parallelism and Concurrency'
-#tags:
+tags:
 #  - concurrency 
 #  - task-based run time system
 #  - parallelsim
 #  - distributed  
-#authors:
+authors:
 #  - name: Parsa Amini
 #    orcid: 0000-0002-6439-8404
 #    affiliation: "1"
@@ -57,7 +57,7 @@ title: 'HPX - The C++ Standard Library for Parallelism and Concurrency'
 #    affiliation: "1"
 #  - name: Author will be ordered alphabetical 
 #    affiliation: "2" # (Multiple affiliations must be quoted)
-#affiliations:
+affiliations:
 # - name: Center of Computation \& Technology, Louisiana State University 
 #   index: 1
 # - name: Exasol
@@ -72,8 +72,8 @@ title: 'HPX - The C++ Standard Library for Parallelism and Concurrency'
 #   index: 6
 # - name: Oracle
 #   index: 7
-#date: \today
-#bibliography: paper.bib
+date: \today
+bibliography: paper.bib
 ---
 
 # Summary
