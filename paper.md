@@ -74,7 +74,6 @@ affiliations:
    index: 7
 date: \today
 bibliography: paper.bib
-
 ---
 
 # Summary
