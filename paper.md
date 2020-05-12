@@ -17,27 +17,27 @@ authors:
   - name: John Biddiscombe
     orcid: 0000-0002-6552-2833
     affiliation: "4"
-# - name: Steven R. Brandt
-#    orcid: 0000-0002-7979-2906
-#    affliiation: "1" 
-#  -name: Patrick Diehl
-#    orcid: 0000-0003-3922-8419
-#    affiliation: "1"
-#  - name: Nikunj Gupta
-#    orcid: 0000-0003-0525-3667
-#    affiliation: "3"
-#  - name: Thomas Heller
-#    orcid: 0000-0003-2620-9438
-#    affiliation: "2"
-#  - name: Hartmut Kaiser
-#    orcid: 0000-0002-8712-2806
-#    affiliation: "1"
-#  - name: Zahra Khatami
-#    orcid: 0000-0001-6654-6856
-#    affiliation: "7"
-#  - name: Alireza Kheirkhahan
-#    orcid: 0000-0002-4624-4647
-#    affiliation: "1"
+ - name: Steven R. Brandt
+    orcid: 0000-0002-7979-2906
+    affliiation: "1" 
+  -name: Patrick Diehl
+    orcid: 0000-0003-3922-8419
+    affiliation: "1"
+  - name: Nikunj Gupta
+    orcid: 0000-0003-0525-3667
+    affiliation: "3"
+  - name: Thomas Heller
+    orcid: 0000-0003-2620-9438
+    affiliation: "2"
+  - name: Hartmut Kaiser
+    orcid: 0000-0002-8712-2806
+    affiliation: "1"
+  - name: Zahra Khatami
+    orcid: 0000-0001-6654-6856
+    affiliation: "7"
+  - name: Alireza Kheirkhahan
+    orcid: 0000-0002-4624-4647
+    affiliation: "1"
 #  - name: Adrian S. Lemoine
 #    affiliation: 6
 #  - name: Auriane Reverdell
