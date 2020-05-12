@@ -9,14 +9,14 @@ authors:
   - name: Parsa Amini
     orcid: 0000-0002-6439-8404
     affiliation: "1"
-#  - name: Bryce Adelstein Lelbach
-#    orcid: 0000-0002-7995-5226
-#    affiliation: "5"
-#  - name: Agustín Berge
-#    affiliation: "6"
-#  - name: John Biddiscombe
-#    orcid: 0000-0002-6552-2833
-#    affiliation: "4"
+  - name: Bryce Adelstein Lelbach
+    orcid: 0000-0002-7995-5226
+    affiliation: "5"
+  - name: Agustín Berge
+    affiliation: "6"
+  - name: John Biddiscombe
+    orcid: 0000-0002-6552-2833
+    affiliation: "4"
 # - name: Steven R. Brandt
 #    orcid: 0000-0002-7979-2906
 #    affliiation: "1" 
