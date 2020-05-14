@@ -121,8 +121,8 @@ The compoments of HPX and their references are listed below:
     Often, modern applications must adapt to runtime environments
     to ensure acceptable performance. APEX enables this flexibility
     by accepting user provided policies that are triggered by defined events.
-    In this way, features such as parcel coalescing **Cite** can adapt
-    to the current phase of an application or eve state of a system.
+    In this way, features such as parcel coalescing [@wagle2018methodology] can adapt
+    to the current phase of an application or even state of a system.
 - **Accelerator Support**
     HPX has suport for two methods of integration with GPUs:
     HPXCL [@diehl2018integration; @martin_stumpf_2018_1409043] and HPX.Compute [@copik2017using]
