@@ -87,7 +87,7 @@ The compoments of HPX and their references are listed below:
 
 - **Thread Manager** [@kaiser2009parallex] The thread manager manages
     the light-weighted user level threads created by HPX. These light-weight threads have extremely short context switching times resulting in the reduced latencies even for very short operations. HPX provides
-    follwing pre-defined scheduling olicues **(?)**: static, thread
+    following pre-defined scheduling policies **(?)**: static, thread
     local, and hierarchical.
 - **Active Global Address Space (AGAS)** [@kaiser2014hpx]
     To support distributed objects, HPX has implemented an address
@@ -105,7 +105,7 @@ The compoments of HPX and their references are listed below:
     they are in a distributed system.
     Additionally its asynchronus protocol enables the
     parcelport to implicitly overlap communication and computation.
-    The parcelport is modular to suport multiple communication libary
+    The parcelport is modular to support multiple communication libary
     backends. By default HPX supports tcp, Message passing Interface (MPI),
     and libfabric [@daiss2019piz].
 - **Performance counters** [@grubel2016dynamic]
@@ -121,8 +121,8 @@ The compoments of HPX and their references are listed below:
     Often, modern applications must adapt to runtime environments
     to ensure acceptable performance. APEX enables this flexibility
     by accepting user provided policies that are triggered by defined events.
-    In this way, features such as parcel coalescing **Cite** can adapt
-    to the current phase of an application or eve state of a system.
+    In this way, features such as parcel coalescing [@wagle2018methodology] can adapt
+    to the current phase of an application or even state of a system.
 - **Accelerator Support**
     HPX has suport for two methods of integration with GPUs:
     HPXCL [@diehl2018integration; @martin_stumpf_2018_1409043] and HPX.Compute [@copik2017using]
@@ -134,7 +134,7 @@ The compoments of HPX and their references are listed below:
     from C++ code. This enables HPX to launch both CPU and GPU kernels
     as dictated by the current state of the system.
 
-HPX is utilzed in a diverse set of applications:
+HPX is utilized in a diverse set of applications:
 Octo-Tiger [@@daiss2019piz; @heller2019harnessing; @pfander2018accelerating],
 a astrophysic code for stellar mergers,
 libGeoDecomp [@Schafer:2008:LGL:1431669.1431721],
