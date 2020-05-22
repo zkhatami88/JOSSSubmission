@@ -142,6 +142,8 @@ a library for stencil code based computer simulations,
 and NLMech [@diehl2018implementation], a simulation tool
 for non-local models, e.g. Peridyanmics.
 
+Please report any bugs or feature requests on the HPX's [GitHub](https://github.com/STEllAR-GROUP/hpx) page.
+
 # Acknowledgements
 
 We would like to acknowledge the NSF, DoE, DTIC, DARPA, the Center for
