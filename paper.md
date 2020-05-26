@@ -83,6 +83,10 @@ In addition to providing the scalable parallelisms, HPX implements the concurren
 
 [TODO: Maybe talking about HPX future and dataflow and execution policies after going into HPX components!?]
 
+
+![Sketch of HPX's architecture with all the components and their interaction.\label{fig:architecture}](hpx_architecture.pdf)
+
+
 The compoments of HPX and their references are listed below:
 
 - **Thread Manager** [@kaiser2009parallex] The thread manager manages
