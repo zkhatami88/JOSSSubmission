@@ -87,7 +87,7 @@ In addition to providing the scalable parallelisms, HPX implements the concurren
 ![Sketch of HPX's architecture with all the components and their interactions.\label{fig:architecture}](hpx_architecture.pdf)
 
 
-Figure~\autoref{fig:architecture} sketches HPX's architectures. The compoments of HPX and their references are listed below:
+\autoref{fig:architecture} sketches HPX's architectures. The compoments of HPX and their references are listed below:
 
 - **Threading Subsystem** [@kaiser2009parallex] The thread manager manages
     the light-weighted user level threads created by HPX. These light-weight threads have extremely short context switching times resulting in the reduced latencies even for very short operations. HPX provides
