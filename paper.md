@@ -121,9 +121,9 @@ In addition to providing the scalable parallelisms, HPX implements the concurren
     own counters to gather infromation customize to thier own applicaiton.
     By default HPX provides performance counters for networking,
     AGAS performance, and thread scheduling.
-- **Autonomic Performance Environment for Exascale (APEX)** [@huck2015autonomic]
+- **Policy Engine/Policies** [@huck2015autonomic]
     Often, modern applications must adapt to runtime environments
-    to ensure acceptable performance. APEX enables this flexibility
+    to ensure acceptable performance. Autonomic Performance Environment for Exascale (APEX) enables this flexibility
     by accepting user provided policies that are triggered by defined events.
     In this way, features such as parcel coalescing [@wagle2018methodology] can adapt
     to the current phase of an application or even state of a system.
@@ -139,7 +139,6 @@ In addition to providing the scalable parallelisms, HPX implements the concurren
     as dictated by the current state of the system.
 - **Local Control Objects**
 - **C++2z Concurrency/Parallelism API**
-- **Policy Engine/Policies**
 
 HPX is utilized in a diverse set of applications:
 Octo-Tiger [@@daiss2019piz; @heller2019harnessing; @pfander2018accelerating],
