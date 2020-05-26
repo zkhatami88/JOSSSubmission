@@ -78,7 +78,7 @@ bibliography: paper.bib
 
 HPX is a C++ Library for Concurrency and Parallelism [@heller2017hpx; @hpx_github; @tabbal2011preliminary]
 for distributed and parallel programming based on an Asynchronous Many Task (AMT) runtime system.
-Its main goal is to improve efficiency and scalability by increasing resource utilization and reducing synchronization through providing asynchronization and employing adaptive scheduling. HPX is able to significantly reduce the processor starvation and effective latencies while controlling overheads.
+Its main goal is to improve efficiency and scalability by increasing resource utilization and reducing synchronization through providing asynchronization and employing adaptive scheduling. For a comperative review on AMTs we refer to [@thoman2018taxonomy]. HPX is able to significantly reduce the processor starvation and effective latencies while controlling overheads.
 In addition to providing the scalable parallelisms, HPX implements the concurrency mechanisms and parallelism facilities as defined by the ISO C++ Standard yet extends them to run in a distributed context. Furthermore, HPX implements functionalities proposed as part of the ongoing C++ standardization process. [TODO: Maybe adding advantages of having hpx in c++ standardization compared to the other methods that are not?]
 
 [TODO: Maybe talking about HPX future and dataflow and execution policies after going into HPX components!?]
@@ -143,6 +143,8 @@ and NLMech [@diehl2018implementation], a simulation tool
 for non-local models, e.g. Peridyanmics.
 
 Please report any bugs or feature requests on the HPX's [GitHub](https://github.com/STEllAR-GROUP/hpx) page.
+
+
 
 # Acknowledgements
 
