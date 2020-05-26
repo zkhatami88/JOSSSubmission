@@ -84,12 +84,12 @@ In addition to providing the scalable parallelisms, HPX implements the concurren
 [TODO: Maybe talking about HPX future and dataflow and execution policies after going into HPX components!?]
 
 
-![Sketch of HPX's architecture with all the components and their interaction.\label{fig:architecture}](hpx_architecture.pdf)
+![Sketch of HPX's architecture with all the components and their interactions.\label{fig:architecture}](hpx_architecture.pdf)
 
 
-The compoments of HPX and their references are listed below:
+Figure~\autoref{fig:architecture} sketches HPX's architectures. The compoments of HPX and their references are listed below:
 
-- **Thread Manager** [@kaiser2009parallex] The thread manager manages
+- **Threading Subsystem** [@kaiser2009parallex] The thread manager manages
     the light-weighted user level threads created by HPX. These light-weight threads have extremely short context switching times resulting in the reduced latencies even for very short operations. HPX provides
     following pre-defined scheduling policies **(?)**: static, thread
     local, and hierarchical.
@@ -102,7 +102,7 @@ The compoments of HPX and their references are listed below:
     without needing to create a new Global Identifier (GID)
     This enables AGAS to support load balancing via object migration.
     **More?**
-- **Parcelport** [@kaiser2009parallex; @biddiscombe2017zero]
+- **Parcel Transport Layer** [@kaiser2009parallex; @biddiscombe2017zero]
     This component is an active-message networking layer.
     The parcelport is able to leverage AGAS in order to
     launch functions on global objects regardless of where
@@ -137,6 +137,9 @@ The compoments of HPX and their references are listed below:
     solution to heterogeneity by automatically generating GPU kernels
     from C++ code. This enables HPX to launch both CPU and GPU kernels
     as dictated by the current state of the system.
+- **Local Control Objects**
+- **C++2z Concurrency/Parallelism API**
+- **Policy Engine/Policies**
 
 HPX is utilized in a diverse set of applications:
 Octo-Tiger [@@daiss2019piz; @heller2019harnessing; @pfander2018accelerating],
