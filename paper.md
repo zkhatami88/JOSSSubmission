@@ -139,9 +139,9 @@ In addition to providing the scalable parallelisms, HPX implements the concurren
     as dictated by the current state of the system.
 - **Local Control Objects**
     HPX has support for `hpx::latch`, `hpx::barrier', and `hpx::counting_semaphore` to synchronize the code or overlap computation
-    and communication. These functions are standard conform acording to # []. For asyncronous computing HPX provides `hpx::async` 
+    and communication. These functions are standard conform acording to the C++20 N4849 draft [@smith2015working]. For asyncronous computing HPX provides `hpx::async` 
     and `hpx::future`, see the second exmaple in the next section. The concurrency API is again standard conform with respect # [].
-- **C++2z Concurrency/Parallelism API**
+- **C++2z Concurrency/Parallelism API** [@smith2015working] 
     HPX implements a part of the C++ Extensions for Parallism [@standard2015programming]. Here, HPX provides the 
     so-called execution policies and a subset of the parallel algorihtms, see the first code example in the next section.
 
@@ -157,7 +157,7 @@ for non-local models, e.g. Peridyanmics.
 
 # Example code
 
-Example for HPX's parallel algorithms API using execution policies as proposed in the C++ 17 #N4507 [@standard2015programming]. 
+Example for HPX's parallel algorithms API using execution policies as proposed in the C++ 17 N4507 [@standard2015programming]. 
 HPX provides a subset of the Algorithm header as parallel algorithms. The API of these algorihtms is execpt of the first argument
 identical to the ones of the Standard Template Library (STL). The first argument is the so-called execution policy introduced in #N4507.
 To execute the reduce operation on the `std::vector` to compute the sum of all elements, the execution policy `hpx::parallel::execution::serial`
