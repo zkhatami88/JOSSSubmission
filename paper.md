@@ -139,6 +139,8 @@ In addition to providing the scalable parallelisms, HPX implements the concurren
     as dictated by the current state of the system.
 - **Local Control Objects**
 - **C++2z Concurrency/Parallelism API**
+    HPX implements a part of the C++ Extensions for Parallism [@standard2015programming]. Here, HPX provides the 
+    so-called execution policies and a subset of the parallel algorihtms, see the first code example in the next section.
 
 HPX is utilized in a diverse set of applications:
 Octo-Tiger [@@daiss2019piz; @heller2019harnessing; @pfander2018accelerating],
@@ -156,8 +158,9 @@ Example for HPX's parallel algorithms API using execution policies as proposed i
 HPX provides a subset of the Algorithm header as parallel algorithms. The API of these algorihtms is execpt of the first argument
 identical to the ones of the Standard Template Library (STL). The first argument is the so-called execution policy introduced in #N4507.
 To execute the reduce operation on the std::vector to compute the sum of all elements, the execution policy hpx::parallel::execution::serial
-to execute the code on a single thread and hpx::parallel::execution::par to execute the one multiple threads. 
-
+to execute the code on a single thread and hpx::parallel::execution::par to execute the one multiple threads. HPX's parallel algorithm library
+API is completly standard conform and by replacing the namespaces, the above code will compile using the parallel algorithm of the STL which 
+are supported by some compiler vendors as an experimantal fecture. 
 
 ```cpp
 #include<hpx/include/parallel_reduce.hpp>
