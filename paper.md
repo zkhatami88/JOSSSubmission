@@ -138,7 +138,9 @@ In addition to providing the scalable parallelisms, HPX implements the concurren
     from C++ code. This enables HPX to launch both CPU and GPU kernels
     as dictated by the current state of the system.
 - **Local Control Objects**
-    
+    HPX has support for `hpx::latch`, `hpx::barrier', and `hpx::counting_semaphore` to synchronize the code or overlap computation
+    and communication. These functions are standard conform acording to # []. For asyncronous computing HPX provides `hpx::async` 
+    and `hpx::future`, see the second exmaple in the next section. The concurrency API is again standard conform with respect # [].
 - **C++2z Concurrency/Parallelism API**
     HPX implements a part of the C++ Extensions for Parallism [@standard2015programming]. Here, HPX provides the 
     so-called execution policies and a subset of the parallel algorihtms, see the first code example in the next section.
@@ -152,7 +154,6 @@ a library for stencil code based computer simulations,
 and NLMech [@diehl2018implementation], a simulation tool
 for non-local models, e.g. Peridyanmics.
 
-Please report any bugs or feature requests on the HPX's [GitHub](https://github.com/STEllAR-GROUP/hpx) page.
 
 # Example code
 
@@ -187,6 +188,14 @@ return 0;
 
 ```
 
+Example for the HPX's concurrency API where the Taylor series for the $\sin(x)$ function. The Talor series is given by
+
+$$
+sin(x) \approx = \sum_\limits_{n=0}^N (-1)^{n-1} \frac{x^{2n)}((2n)!}
+$$
+
+
+Please report any bugs or feature requests on the HPX's [GitHub](https://github.com/STEllAR-GROUP/hpx) page.
 
 # Acknowledgements
 
