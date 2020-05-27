@@ -190,8 +190,46 @@ return 0;
 
 Example for the HPX's concurrency API where the Taylor series for the $\sin(x)$ function. The Talor series is given by
 
-$$ \sin(x) \approx = \sum\limits_{n=0}^N (-1)^{n-1} \frac{x^{2n}}{(2n)!}$$
+$$ \sin(x) \approx = \sum\limits_{n=0}^N (-1)^{n-1} \frac{x^{2n}}{(2n)!}.$$
 
+For the concurrent computation, the interval $[0,N]$ is splitted in two partions from $[0,N/2]$ and $[(N/2)+1,N]$ and 
+these are computed asyncronously using `hpx::async`. Note that each asynchronous functionc all returns a so-called
+`hpx::future' which is needed to synchronize the collection of the partial results. 
+
+```cpp
+#include<hpx/include/future.hpp>
+#include<iostream>
+
+// Define the partial taylor function
+double taylor(size_t begin, size_t end, size_t n, double x){
+double res = 0;
+
+for( size_t i = begin ; i < end ; i++){
+    res += pow(-1,i-1) * pow(x,2*n) / factorial(2*n);
+}
+
+return res;
+
+}
+
+int main(){
+
+// Compute the Talor series sin(2.0) for 100 iterations
+size_t = 100;
+
+// Launch to concurrent computation of each partial result
+hpx::future<double> f1 = std::async(taylor,0,n/2,n,2.);
+hpx::future<double> f2 = std::async(taylor,(n/2)+1,n,n,2.);
+
+// Introduce a barrier to gather the results
+double res = f1.get() + f2.get();
+
+// Print the result
+std::cout << "Sin(2.)= " << res << std::endl;
+
+return 0;
+}
+```
 
 Please report any bugs or feature requests on the HPX's [GitHub](https://github.com/STEllAR-GROUP/hpx) page.
 
