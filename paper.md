@@ -150,6 +150,30 @@ for non-local models, e.g. Peridyanmics.
 
 Please report any bugs or feature requests on the HPX's [GitHub](https://github.com/STEllAR-GROUP/hpx) page.
 
+# Example code
+
+```cpp
+#include<hpx/include/parallel_reduce.hpp>
+#include<vector>
+
+int main(){
+
+std::vector values = {1,2,3,4,5,6,7,8,9,10};
+
+// Compute the sum in a serial fashion
+hpx::parallel::v1::reduce(
+    hpx::parallel::execution::serial,values.begin(),values.end(),0);
+
+// Compute the sum in a serial fashion
+hpx::parallel::v1::reduce(
+    hpx::parallel::execution::par,values.begin(),values.end(),0);
+
+
+return 0;
+
+}
+
+```
 
 
 # Acknowledgements
