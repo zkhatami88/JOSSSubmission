@@ -193,8 +193,11 @@ Example for the HPX's concurrency API where the Taylor series for the $\sin(x)$ 
 $$ \sin(x) \approx = \sum\limits_{n=0}^N (-1)^{n-1} \frac{x^{2n}}{(2n)!}.$$
 
 For the concurrent computation, the interval $[0,N]$ is splitted in two partions from $[0,N/2]$ and $[(N/2)+1,N]$ and 
-these are computed asyncronously using `hpx::async`. Note that each asynchronous functionc all returns a so-called
-`hpx::future' which is needed to synchronize the collection of the partial results. 
+these are computed asyncronously using `hpx::async`. Note that each asynchronous function  call returns a so-called
+`hpx::future' which is needed to synchronize the collection of the partial results. The future has a `get()` method 
+which returns the result if the computaiton of the taylor function finished. If the result is not ready yet a barrier
+until the result is ready is introduced. Only if `f1` and `f2` are ready, the result ill be printed to the standard
+output stream. 
 
 ```cpp
 #include<hpx/include/future.hpp>
