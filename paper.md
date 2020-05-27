@@ -190,7 +190,7 @@ return 0;
 
 Example for the HPX's concurrency API where the Taylor series for the $\sin(x)$ function. The Talor series is given by
 
-$$ \sin(x) \approx = \sum\limits_{n=0}^N (-1)^{n-1} \frac{x^{2n}}((2n)!}$$
+$$ \sin(x) \approx = \sum\limits_{n=0}^N (-1)^{n-1} \frac{x^{2n}}{(2n)!}$$
 
 
 Please report any bugs or feature requests on the HPX's [GitHub](https://github.com/STEllAR-GROUP/hpx) page.
