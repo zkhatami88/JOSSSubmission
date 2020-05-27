@@ -152,6 +152,13 @@ Please report any bugs or feature requests on the HPX's [GitHub](https://github.
 
 # Example code
 
+Example for HPX's parallel algorithms API using execution policies as proposed in the C++ 17 #N4507 [@standard2015programming]. 
+HPX provides a subset of the Algorithm header as parallel algorithms. The API of these algorihtms is execpt of the first argument
+identical to the ones of the Standard Template Library (STL). The first argument is the so-called execution policy introduced in #N4507.
+To execute the reduce operation on the std::vector to compute the sum of all elements, the execution policy hpx::parallel::execution::serial
+to execute the code on a single thread and hpx::parallel::execution::par to execute the one multiple threads. 
+
+
 ```cpp
 #include<hpx/include/parallel_reduce.hpp>
 #include<vector>
