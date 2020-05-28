@@ -77,8 +77,8 @@ bibliography: paper.bib
 # Summary
 
 The new challenges posted by Exascale system architectures have resulted in difficult achieving a desired scalability using traditional distributed-memory runtimes. Asynchronous many-task systems (AMT) are based on a new paradigm showing promises in addressing these challenges, providing application developers with a productive and performant approach to programming on next generation system. HPX is a C++ Library for Concurrency and Parallelism that is developed by The Stellar group of internatinal collaborators  [@heller2017hpx; @hpx_github; @tabbal2011preliminary]
-for distributed and parallel programming based on an AMT runtime system. Its main goal is to improve efficiency and scalability by increasing resource utilization and reducing synchronization through providing asynchronization and employing adaptive scheduling. HPX is able to maintain load balance among all the available resources resultinng in significantly reducing the processor starvation and effective latencies while controlling overheads.
-HPX implements the concurrency mechanisms and parallelism facilities as defined by the ISO C++ Standard yet extends them to run in a distributed context. HPX uses the C++ future to transform sequential tasks into wait-free asynchronous executions. Futurization results in making the data flow execution trees of million lightweight HPX tasks in the proper order. HPX also provides a work-stealing task schedular that takes car of a fine-grained parallelizations. Furthermore, HPX implements functionalities proposed as part of the ongoing C++ standardization process. 
+for distributed and parallel programming based on an AMT runtime system. Its main goal is to improve efficiency and scalability by increasing resource utilization and reducing synchronization through providing asynchronization and employing adaptive scheduling. HPX is able to maintain load balance among all the available resources resulting in significantly reducing the processor starvation and effective latencies while controlling overheads.
+HPX implements the concurrency mechanisms and parallelism facilities as defined by the ISO C++ Standard yet extends them to run in a distributed context. HPX uses the C++ future to transform sequential tasks into wait-free asynchronous executions. Futurization results in making the data flow execution trees of million lightweight HPX tasks in the proper order. HPX also provides a work-stealing task schedular that takes care of a fine-grained parallelizations. Furthermore, HPX implements functionalities proposed as part of the ongoing C++ standardization process. 
 
 ![Sketch of HPX's architecture with all the components and their interactions.\label{fig:architecture}](hpx_architecture.pdf)
 
@@ -91,7 +91,7 @@ HPX implements the concurrency mechanisms and parallelism facilities as defined 
     local, and hierarchical.
 - **Active Global Address Space (AGAS)** [@kaiser2014hpx]
     To support distributed objects, HPX has implemented an address
-    resolution component similar to the PGAS model. **Citation**
+    resolution component similar to the PGAS model. **Citation(?)**
     This layer enables HPX to exposing a uniform API for local and
     remote execution. Unlike PGAS, however, AGAS provides the user
     with the ability to move global objects in a distributed system
@@ -112,7 +112,7 @@ HPX implements the concurrency mechanisms and parallelism facilities as defined 
     HPX provides its users with a uniform suite of global counters
     to monitor system metrics. These counters have
     names registered with AGAS which enables the users to
-    easily query for different metrics at runtime. **(Check me)**
+    easily query for different metrics at runtime. **(Check me(?))**
     Additionally, HPX provides an API for users to create their
     own counters to gather information customize to their own application.
     By default HPX provides performance counters for networking,
