@@ -141,14 +141,7 @@ HPX implements the concurrency mechanisms and parallelism facilities as defined 
     HPX implements a part of the C++ Extensions for Parallism [@standard2015programming]. Here, HPX provides the 
     so-called execution policies and a subset of the parallel algorihtms, see the first code example in the next section.
 
-
-HPX is utilized in a diverse set of applications:
-Octo-Tiger [@@daiss2019piz; @heller2019harnessing; @pfander2018accelerating],
-a astrophysic code for stellar mergers,
-libGeoDecomp [@Schafer:2008:LGL:1431669.1431721],
-a library for stencil code based computer simulations,
-and NLMech [@diehl2018implementation], a simulation tool
-for non-local models, e.g. Peridyanmics.
+HPX is utilzed in a diverse set of applications: Octo-Tiger [@@daiss2019piz; @heller2019harnessing; @pfander2018accelerating], an astrophysics code for stellar mergers; libGeoDecomp [@Schafer:2008:LGL:1431669.1431721], an auto-parallelizing library to speed up stencil code based computer simulations; and NLMech [@diehl2018implementation], a simulation tool for non-local models, e.g. Peridyanmics. 
 
 
 # Example code
