@@ -134,14 +134,14 @@ HPX implements the concurrency mechanisms and parallelism facilities as defined 
     from C++ code. This enables HPX to launch both CPU and GPU kernels
     as dictated by the current state of the system.
 - **Local Control Objects**
-    HPX has support for `hpx::latch`, `hpx::barrier', and `hpx::counting_semaphore` to synchronize the code or overlap computation
+    HPX has support for `hpx::latch`, `hpx::barrier`, and `hpx::counting_semaphore` to synchronize the code or overlap computation
     and communication. These functions are standard conform according to the C++20 N4849 draft [@smith2015working]. For asyncronous computing HPX provides `hpx::async` 
     and `hpx::future`, see the second exmaple in the next section. The concurrency API is again standard conform with respect # [].
 - **C++2z Concurrency/Parallelism API** [@smith2015working] 
     HPX implements a part of the C++ Extensions for Parallism [@standard2015programming]. Here, HPX provides the 
     so-called execution policies and a subset of the parallel algorihtms, see the first code example in the next section.
 
-HPX is utilzed in a diverse set of applications: Octo-Tiger [@@daiss2019piz; @heller2019harnessing; @pfander2018accelerating], an astrophysics code for stellar mergers; libGeoDecomp [@Schafer:2008:LGL:1431669.1431721], an auto-parallelizing library to speed up stencil code based computer simulations; and NLMech [@diehl2018implementation], a simulation tool for non-local models, e.g. Peridyanmics. 
+HPX is utilzed in a diverse set of applications: Octo-Tiger [@@daiss2019piz; @heller2019harnessing; @pfander2018accelerating], an astrophysics code for stellar mergers; libGeoDecomp [@Schafer:2008:LGL:1431669.1431721], an auto-parallelizing library to speed up stencil code based computer simulations; and NLMech [@diehl2018implementation], a simulation tool for non-local models, e.g. Peridynamics. 
 
 
 # Example code
