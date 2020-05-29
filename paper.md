@@ -136,7 +136,7 @@ HPX implements the concurrency mechanisms and parallelism facilities as defined 
 - **Local Control Objects**
     HPX has support for `hpx::latch`, `hpx::barrier`, and `hpx::counting_semaphore` to synchronize the code or overlap computation
     and communication. These functions are standard conform according to the C++20 N4849 draft [@smith2015working]. For asyncronous computing HPX provides `hpx::async` 
-    and `hpx::future`, see the second exmaple in the next section. The concurrency API is again standard conform with respect # [].
+    and `hpx::future`, see the second exmaple in the next section. The concurrency API is again standard conform with respect N2889 [@chrysanthakopoulos2005asynchronous].
 - **C++2z Concurrency/Parallelism API** [@smith2015working] 
     HPX implements a part of the C++ Extensions for Parallism [@standard2015programming]. Here, HPX provides the 
     so-called execution policies and a subset of the parallel algorihtms, see the first code example in the next section.
