@@ -76,56 +76,81 @@ bibliography: paper.bib
 
 # Summary
 
-The new challenges posted by Exascale system architectures have resulted in difficult achieving a desired scalability using traditional distributed-memory runtimes. Asynchronous many-task systems (AMT) are based on a new paradigm showing promises in addressing these challenges, providing application developers with a productive and performant approach to programming on next generation system. HPX is a C++ Library for Concurrency and Parallelism that is developed by The Stellar group of internatinal collaborators  [@heller2017hpx; @hpx_github; @tabbal2011preliminary]
-for distributed and parallel programming based on an AMT runtime system. Its main goal is to improve efficiency and scalability by increasing resource utilization and reducing synchronization through providing asynchronization and employing adaptive scheduling. HPX is able to maintain load balance among all the available resources resulting in significantly reducing the processor starvation and effective latencies while controlling overheads.
-HPX implements the concurrency mechanisms and parallelism facilities as defined by the ISO C++ Standard yet extends them to run in a distributed context. HPX uses the C++ future to transform sequential tasks into wait-free asynchronous executions. Futurization results in making the data flow execution trees of million lightweight HPX tasks in the proper order. HPX also provides a work-stealing task schedular that takes care of a fine-grained parallelizations. Furthermore, HPX implements functionalities proposed as part of the ongoing C++ standardization process. 
+The new challenges posted by Exascale system architectures have resulted in
+difficult achieving a desired scalability using traditional distributed-memory
+runtimes. Asynchronous many-task systems (AMT) are based on a new paradigm
+showing promises in addressing these challenges, providing application
+developers with a productive and performant approach to programming on next
+generation systems. HPX is a C++ Library for Concurrency and Parallelism that is
+developed by The STE||AR Group, an international group of collaborators working
+in the field of distributed and parallel programming
+[@heller2017hpx;@hpx_github; @tabbal2011preliminary]. HPX's main goal is to
+improve efficiency and scalability of parallel applications by increasing
+resource utilization and reducing synchronization through providing an
+asynchronous API and employing adaptive scheduling. The consequent use of
+futures intrinsically enables overlap of computation and communication and
+constraint-based synchronization. HPX is able to maintain load balance among all
+the available resources resulting in significantly reducing the processor
+starvation and effective latencies while controlling overheads. HPX is fully
+conforming to the C++ ISO Standards and implements the standardized concurrency
+mechanisms and parallelism facilities. Further, HPX extends those facilities to
+distributed use cases, thus enabling syntactic and semantic equivalence of local
+and remote operation on the API level. HPX uses the C++ future to transform
+sequential tasks into wait-free asynchronous executions. Futurization results in
+making the data flow execution trees of million lightweight HPX tasks in the
+proper order. HPX also provides a work-stealing task schedular that takes care
+of a fine-grained parallelizations. Furthermore, HPX implements functionalities
+proposed as part of the ongoing C++ standardization process. 
 
 ![Sketch of HPX's architecture with all the components and their interactions.\label{fig:architecture}](hpx_architecture.pdf)
 
 
-\autoref{fig:architecture} sketches HPX's architectures. The components of HPX and their references are listed below:
+\autoref{fig:architecture} sketches HPX's architectures. The components of HPX 
+and their references are listed below:
 
-- **Threading Subsystem** [@kaiser2009parallex] The thread manager manages
-    the light-weighted user level threads created by HPX. These light-weight threads have extremely short context switching times resulting in the reduced latencies even for very short operations. HPX provides
-    following pre-defined scheduling policies **(?)**: static, thread
-    local, and hierarchical.
-- **Active Global Address Space (AGAS)** [@kaiser2014hpx]
-    To support distributed objects, HPX has implemented an address
-    resolution component similar to the PGAS model. **Citation(?)**
-    This layer enables HPX to exposing a uniform API for local and
-    remote execution. Unlike PGAS, however, AGAS provides the user
-    with the ability to move global objects in a distributed system
-    without needing to create a new Global Identifier (GID)
-    This enables AGAS to support load balancing via object migration.
-    **More?**
+- **Threading Subsystem** [@kaiser2009parallex] The thread manager manages the
+    light-weighted user level threads created by HPX. These light-weight threads
+    have extremely short context switching times resulting in the reduced latencies
+    even for very short operations. HPX provides following pre-defined scheduling
+    policies: static, thread local, and hierarchical.
+- **Active Global Address Space (AGAS)** [@kaiser2014hpx;@amini2019agas]
+    To support distributed objects, HPX supports a global address
+    resolution component that is extending the PGAS model to enable runtime based 
+    resource allocation and data placement. 
+    This layer enables HPX to expose a uniform API for local and remote
+    execution. Unlike PGAS, AGAS provides the user with the ability to
+    transparently move global objects in a distributed system. This enables AGAS
+    to support load balancing via object migration.
 - **Parcel Transport Layer** [@kaiser2009parallex; @biddiscombe2017zero]
     This component is an active-message networking layer.
     The parcelport is able to leverage AGAS in order to
-    launch functions on global objects regardless of where
-    they are in a distributed system.
+    launch functions on global objects regardless of their current placement
+    in a distributed system.
     Additionally its asynchronous protocol enables the
     parcelport to implicitly overlap communication and computation.
     The parcelport is modular to support multiple communication library
-    backends. By default HPX supports tcp, Message passing Interface (MPI),
+    backends. By default HPX supports TCP/IP, Message passing Interface (MPI),
     and libfabric [@daiss2019piz].
 - **Performance counters** [@grubel2016dynamic]
-    HPX provides its users with a uniform suite of global counters
-    to monitor system metrics. These counters have
-    names registered with AGAS which enables the users to
-    easily query for different metrics at runtime. **(Check me(?))**
+    HPX provides its users with a uniform suite of performance counters
+    to monitor system metrics that are accessible globally. These counters have
+    their names registered with AGAS, which enables the users to
+    easily query for different metrics at runtime.
     Additionally, HPX provides an API for users to create their
-    own counters to gather information customize to their own application.
-    By default HPX provides performance counters for networking,
-    AGAS performance, and thread scheduling.
+    own counters to gather information customized to their own application.
+    By default HPX provides performance counters for its components, such as 
+    networking, AGAS operations, thread scheduling, and various statistics.
 - **Policy Engine/Policies** [@huck2015autonomic]
     Often, modern applications must adapt to runtime environments
-    to ensure acceptable performance. Autonomic Performance Environment for Exascale (APEX) enables this flexibility
-    by accepting user provided policies that are triggered by defined events.
-    In this way, features such as parcel coalescing [@wagle2018methodology] can adapt
-    to the current phase of an application or even state of a system.
+    to ensure acceptable performance. Autonomic Performance Environment for 
+    Exascale (APEX) enables this flexibility by accepting user provided policies 
+    that are triggered by defined events.
+    In this way, features such as parcel coalescing [@wagle2018methodology] can 
+    adapt to the current phase of an application or even state of a system.
 - **Accelerator Support**
     HPX has suport for two methods of integration with GPUs:
-    HPXCL [@diehl2018integration; @martin_stumpf_2018_1409043] and HPX.Compute [@copik2017using]
+    HPXCL [@diehl2018integration; @martin_stumpf_2018_1409043] and HPX.Compute 
+    [@copik2017using]
     HPXCL provides users the ability to manage GPU kernels through a
     global object. This enables HPX to coordinate the launching and
     synchronization of CPU and GPU code.
@@ -134,96 +159,111 @@ HPX implements the concurrency mechanisms and parallelism facilities as defined 
     from C++ code. This enables HPX to launch both CPU and GPU kernels
     as dictated by the current state of the system.
 - **Local Control Objects**
-    HPX has support for `hpx::latch`, `hpx::barrier`, and `hpx::counting_semaphore` to synchronize the code or overlap computation
-    and communication. These functions are standard conform according to the C++20 N4849 draft [@smith2015working]. For asyncronous computing HPX provides `hpx::async` 
-    and `hpx::future`, see the second exmaple in the next section. The concurrency API is again standard conform with respect N2889 [@chrysanthakopoulos2005asynchronous].
-- **C++2z Concurrency/Parallelism API** [@smith2015working] 
-    HPX implements a part of the C++ Extensions for Parallism [@standard2015programming]. Here, HPX provides the 
-    so-called execution policies and a subset of the parallel algorihtms, see the first code example in the next section.
+    HPX has support for many of the C++20 primitives, such as `hpx::latch`, 
+    `hpx::barrier`, and `hpx::counting_semaphore` to synchronize the code or 
+    overlap computation and communication. These functions are standard conform 
+    according to the C++20 [@standard2017programming]. For asyncronous computing 
+    HPX provides `hpx::async` and `hpx::future`, see the second exmaple in the 
+    next section.
+- **C++ Standards conforming API** 
+    HPX implements all of the C++17 parallel algorithms [@standard2017programming]
+    and extends those with asynchronous versions. Here, HPX provides the 
+    `hpx::execution::seq`, `hpx::execution::par` execution policies, and (as an 
+    extension) their asynchronous equivalents 
+    `hpx::execution::seq(hpx::execution::task)` and 
+    `hpx::execution::par(hpx::execution::task)` (see the first code example
+    in the next section).
 
-HPX is utilzed in a diverse set of applications: Octo-Tiger [@@daiss2019piz; @heller2019harnessing; @pfander2018accelerating], an astrophysics code for stellar mergers; libGeoDecomp [@Schafer:2008:LGL:1431669.1431721], an auto-parallelizing library to speed up stencil code based computer simulations; and NLMech [@diehl2018implementation], a simulation tool for non-local models, e.g. Peridynamics. 
+HPX is utilzed in a diverse set of applications: Octo-Tiger [@daiss2019piz;
+@heller2019harnessing; @pfander2018accelerating], an astrophysics code for
+stellar mergers; libGeoDecomp [@Schafer:2008:LGL:1431669.1431721], an
+auto-parallelizing library to speed up stencil code based computer simulations;
+and NLMech [@diehl2018implementation], a simulation tool for non-local models,
+e.g. Peridynamics. 
 
 
 # Example code
 
-Example for HPX's parallel algorithms API using execution policies as proposed in the C++ 17 N4507 [@standard2015programming]. 
-HPX provides a subset of the Algorithm header as parallel algorithms. The API of these algorithms is except of the first argument
-identical to the ones of the Standard Template Library (STL). The first argument is the so-called execution policy introduced in #N4507.
-To execute the reduce operation on the `std::vector` to compute the sum of all elements, the execution policy `hpx::parallel::execution::serial`
-to execute the code on a single thread and `hpx::parallel::execution::par` to execute the one multiple threads. HPX's parallel algorithm library
-API is completely standard conform and by replacing the namespaces, the above code will compile using the parallel algorithm of the STL which 
-are supported by some compiler vendors as an experimental feature. 
+Example for HPX's parallel algorithms API using execution policies as defined in
+the C++17 Standard [@standard2017programming]. HPX also implements all of the
+parallel algorithms defined therein. The parallel algorithms extend the classic
+stl algorithms by adding an additional first argument (called execution policy).
+The `hpx::execution::seq` implies sequential execution while `hpx::execution::par`
+will execute the algorithm in parallel.
+HPX's parallel algorithm library API is completely standards conforming. 
 
 ```cpp
-#include<hpx/include/parallel_reduce.hpp>
-#include<vector>
+#include <hpx/include/parallel_reduce.hpp>
+#include <iostream>
+#include <vector>
 
-int main(){
+int main()
+{
+    std::vector<int> values = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
-std::vector values = {1,2,3,4,5,6,7,8,9,10};
+    // Compute the sum in a sequential fashion
+    int sum1 = hpx::reduce(hpx::execution::seq, values.begin(), values.end(), 0);
+    std::cout << sum1 << '\n';      // will print 55
 
-// Compute the sum in a serial fashion
-hpx::parallel::v1::reduce(
-    hpx::parallel::execution::serial,values.begin(),values.end(),0);
+    // Compute the sum in a parallel fashion based on a range of values
+    int sum2 = hpx::reduce(hpx::execution::par, values, 0);
+    std::cout << sum2 << '\n';      // will print 55 as well
 
-// Compute the sum in a serial fashion
-hpx::parallel::v1::reduce(
-    hpx::parallel::execution::par,values.begin(),values.end(),0);
-
-
-return 0;
-
+    return 0;
 }
-
 ```
 
-Example for the HPX's concurrency API where the Taylor series for the $\sin(x)$ function. The Taylor series is given by
+Example for the HPX's concurrency API where the Taylor series for the $\sin(x)$
+function is computed. The Taylor series is given by
 
 $$ \sin(x) \approx = \sum\limits_{n=0}^N (-1)^{n-1} \frac{x^{2n}}{(2n)!}.$$
 
-For the concurrent computation, the interval $[0,N]$ is splitted in two partitions from $[0,N/2]$ and $[(N/2)+1,N]$ and 
-these are computed asynchronously using `hpx::async`. Note that each asynchronous function  call returns a so-called
-`hpx::future` which is needed to synchronize the collection of the partial results. The future has a `get()` method 
-which returns the result if the computation of the Taylor function finished. If the result is not ready yet a barrier
-until the result is ready is introduced. Only if `f1` and `f2` are ready, the result will be printed to the standard
+For the concurrent computation, the interval $[0, N]$ is splitted in two
+partitions from $[0, N/2]$ and $[(N/2)+1, N]$ and these are computed
+asynchronously using `hpx::async`. Note that each asynchronous function call
+returns an `hpx::future` which is needed to synchronize the collection
+of the partial results. The future has a `get()` method that returns the result
+once the computation of the Taylor function finished. If the result is not ready
+yet, the current thread is suspended until the result is ready. Only if 
+`f1` and `f2` are ready, the overall result will be printed to the standard 
 output stream. 
 
 ```cpp
-#include<hpx/include/future.hpp>
-#include<iostream>
+#include <hpx/include/future.hpp>
+#include <cstddef>
+#include <cmath>
+#include <iostream>
 
 // Define the partial taylor function
-double taylor(size_t begin, size_t end, size_t n, double x){
-double res = 0;
-
-for( size_t i = begin ; i < end ; i++){
-    res += pow(-1,i-1) * pow(x,2*n) / factorial(2*n);
+double taylor(std::size_t begin, std::size_t end, std::size_t n, double x)
+{
+    double res = 0;
+    for (std::size_t i = begin; i != end; ++i)
+    {
+        res += std::pow(-1, i - 1) * std::pow(x, 2 * n) / factorial(2 * n);
+    }
+    return res;
 }
 
-return res;
+int main()
+{
+    // Compute the Talor series sin(2.0) for 100 iterations
+    std::size_t n = 100;
 
-}
+    // Launch two concurrent computations of each partial result
+    hpx::future<double> f1 = std::async(taylor, 0, n / 2, n, 2.);
+    hpx::future<double> f2 = std::async(taylor, (n / 2) + 1, n, n, 2.);
 
-int main(){
+    // Introduce a barrier to gather the results
+    double res = f1.get() + f2.get();
 
-// Compute the Talor series sin(2.0) for 100 iterations
-size_t = 100;
-
-// Launch to concurrent computation of each partial result
-hpx::future<double> f1 = std::async(taylor,0,n/2,n,2.);
-hpx::future<double> f2 = std::async(taylor,(n/2)+1,n,n,2.);
-
-// Introduce a barrier to gather the results
-double res = f1.get() + f2.get();
-
-// Print the result
-std::cout << "Sin(2.)= " << res << std::endl;
-
-return 0;
+    // Print the result
+    std::cout << "Sin(2.) = " << res << std::endl;
 }
 ```
 
-Please report any bugs or feature requests on the HPX's [GitHub](https://github.com/STEllAR-GROUP/hpx) page.
+Please report any bugs or feature requests on the HPX's 
+[GitHub](https://github.com/STEllAR-GROUP/hpx) page.
 
 # Acknowledgments
 
