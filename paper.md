@@ -165,6 +165,15 @@ and their references are listed below:
     according to the C++20 [@standard2017programming]. For asyncronous computing 
     HPX provides `hpx::async` and `hpx::future`, see the second exmaple in the 
     next section.
+- **Software Resilience**
+    HPX supports software level resilience [@gupta2020implementing] through its 
+    resiliency API, such as `hpx::async_replay` and `hpx::async_replicate` and 
+    its dataflow counterparts `hpx::dataflow_replay` and 
+    `hpx::dataflow_replicate`. These APIs are resilient against memory byte 
+    flips and processor inacurracies.
+    HPX provides an easy method to port to resilient API by replacing 
+    `hpx::async` or `hpx::dataflow` with its resilient API counterpart everywhere 
+    in the code without making any other changes.
 - **C++ Standards conforming API** 
     HPX implements all of the C++17 parallel algorithms [@standard2017programming]
     and extends those with asynchronous versions. Here, HPX provides the 
