@@ -169,7 +169,7 @@ and their references are listed below:
     HPX supports software level resilience [@gupta2020implementing] through its 
     resiliency API, such as `hpx::async_replay` and `hpx::async_replicate` and 
     its dataflow counterparts `hpx::dataflow_replay` and 
-    `hpx::dataflow_replicate`. These APIs are resilient against memory byte 
+    `hpx::dataflow_replicate`. These APIs are resilient against memory bit 
     flips and processor inacurracies.
     HPX provides an easy method to port to resilient API by replacing 
     `hpx::async` or `hpx::dataflow` with its resilient API counterpart everywhere 
