@@ -333,6 +333,6 @@ As the paper was written, HPX has been funded by:
 - The European Commission's Horizon 2020 programme through the grant
   H2020-EU.1.2.2. 671603 (AllScale).
 
-For a updated list, we refer to [https://github.com/STEllAR-GROUP/hpx#acknowledgements].
+For a updated list, we refer to [HPX's website](http://hpx.stellar-group.org/funding-acknowledgements/).
 
 # References
