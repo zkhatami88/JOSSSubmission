@@ -294,7 +294,7 @@ We would also like to thank the following organizations for granting us
 allocations of their compute resources: LSU HPC, LONI, XSEDE, NERSC, CSCS/ETHZ,
 and the Gauss Center for Supercomputing.
 
-HPX has been funded by:
+As the paper was written, HPX has been funded by:
 
 - The National Science Foundation through awards 1240655 (STAR), 1339782
   (STORM), and 1737785 (Phylanx).
@@ -332,5 +332,7 @@ HPX has been funded by:
 
 - The European Commission's Horizon 2020 programme through the grant
   H2020-EU.1.2.2. 671603 (AllScale).
+
+For a updated list, we refer to [https://github.com/STEllAR-GROUP/hpx#acknowledgements].
 
 # References
