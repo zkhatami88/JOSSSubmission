@@ -155,7 +155,7 @@ and their references are listed below:
     In this way, features such as parcel coalescing [@wagle2018methodology] can
     adapt to the current phase of an application or even state of a system.
 - **Accelerator Support**
-    HPX has suport for two methods of integration with GPUs:
+    HPX has support for two methods of integration with GPUs:
     HPXCL [@diehl2018integration; @martin_stumpf_2018_1409043] and HPX.Compute
     [@copik2017using]
     HPXCL provides users the ability to manage GPU kernels through a
@@ -169,15 +169,15 @@ and their references are listed below:
     HPX has support for many of the C++20 primitives, such as `hpx::latch`,
     `hpx::barrier`, and `hpx::counting_semaphore` to synchronize the code or
     overlap computation and communication. These functions are standard conform
-    according to the C++20 [@standard2017programming]. For asyncronous computing
-    HPX provides `hpx::async` and `hpx::future`, see the second exmaple in the
+    according to the C++20 [@standard2017programming]. For asynchronous computing
+    HPX provides `hpx::async` and `hpx::future`, see the second example in the
     next section.
 - **Software Resilience**
     HPX supports software level resilience [@gupta2020implementing] through its
     resiliency API, such as `hpx::async_replay` and `hpx::async_replicate` and
     its dataflow counterparts `hpx::dataflow_replay` and
     `hpx::dataflow_replicate`. These APIs are resilient against memory bit
-    flips and processor inacurracies.
+    flips and processor inaccuracies.
     HPX provides an easy method to port to resilient API by replacing
     `hpx::async` or `hpx::dataflow` with its resilient API counterpart everywhere
     in the code without making any other changes.
@@ -190,7 +190,7 @@ and their references are listed below:
     `hpx::execution::par(hpx::execution::task)` (see the first code example
     in the next section).
 
-HPX is utilzed in a diverse set of applications: Octo-Tiger [@daiss2019piz;
+HPX is utilized in a diverse set of applications: Octo-Tiger [@daiss2019piz;
 @heller2019harnessing; @pfander2018accelerating], an astrophysics code for
 stellar mergers; libGeoDecomp [@Schafer:2008:LGL:1431669.1431721], an
 auto-parallelizing library to speed up stencil code based computer simulations;
