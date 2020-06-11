@@ -185,9 +185,9 @@ and their references are listed below:
     resiliency API, such as `hpx::async_replay` and `hpx::async_replicate` and
     its dataflow counterparts `hpx::dataflow_replay` and
     `hpx::dataflow_replicate`. These APIs are resilient against memory bit
-    flips and processor inaccuracies.
-    HPX provides an easy method to port to resilient API by replacing
-    `hpx::async` or `hpx::dataflow` with its resilient API counterpart everywhere
+    flips and other hardware errors.
+    HPX provides an easy method to port codes to the resilient API by replacing
+    `hpx::async` or `hpx::dataflow` with its resilient API counterparts everywhere
     in the code without making any other changes.
 - **C++ Standards conforming API**
     HPX implements all of the C++17 parallel algorithms [@standard2017programming]
@@ -196,7 +196,9 @@ and their references are listed below:
     extension) their asynchronous equivalents
     `hpx::execution::seq(hpx::execution::task)` and
     `hpx::execution::par(hpx::execution::task)` (see the first code example
-    in the next section).
+    in the next section). HPX also implements the C++20 
+    concurrency facilities and APIs [@standard2020programming], such as
+    `hpx::jthread`, `hpx::latch`, `hpx::barrier`, etc.
 
 HPX is utilized in a diverse set of applications: Octo-Tiger [@daiss2019piz;
 @heller2019harnessing; @pfander2018accelerating], an astrophysics code for
