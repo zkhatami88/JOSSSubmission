@@ -154,7 +154,7 @@ and their references are listed below:
     own counters to gather information customized to their own application.
     By default HPX provides performance counters for its components, such as
     networking, AGAS operations, thread scheduling, and various statistics.
-- **Policy Engine/Policies** [@huck2015autonomic]
+- **Policy Engine/Policies** [@huck2015autonomic;@khatami2017hpx;@laberge2019scheduling]
     Often, modern applications must adapt to runtime environments
     to ensure acceptable performance. Autonomic Performance Environment for
     Exascale (APEX) enables this flexibility by measuring HPX tasks, monitoring
