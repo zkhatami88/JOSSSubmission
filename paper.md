@@ -294,12 +294,12 @@ Please report any bugs or feature requests on the HPX's
 # Acknowledgments
 
 We would like to acknowledge the National Science Foundation (NSF), the U.S.
-Department of Energy (DoE), the Defense Technical Information Center (DTIC),
-DARPA, the Center for Computation and Technology (CCT) at Louisiana State
-University (LSU), the Swiss National Supercomputing Centre (CSCS), the
-Department of Computer Science 3 - Computer Architecture at the University of
-Erlangen Nuremberg who fund and support our work, and the Heterogeneous System
-Architecture (HSA) Foundation.
+Department of Energy (DoE), the Defense Technical Information Center (DTIC), the
+Defense Advanced Research Projects Agency (DARPA), the Center for Computation
+and Technology (CCT) at Louisiana State University (LSU), the Swiss National
+Supercomputing Centre (CSCS), the Department of Computer Science 3 - Computer
+Architecture at the University of Erlangen Nuremberg who fund and support our
+work, and the Heterogeneous System Architecture (HSA) Foundation.
 
 We would also like to thank the following organizations for granting us
 allocations of their compute resources: LSU HPC, Louisiana Optical Network
@@ -309,16 +309,17 @@ Oak Ridge Leadership Computing Facility (OLCF), Swiss National Supercomputing
 Centre (CSCS/ETHZ), the Juelich Supercomputing Centre (JSC), and the Gauss
 Center for Supercomputing.
 
-As the paper was written, HPX has been directly funded by the following grants:
+At the time the paper was written, HPX has been directly funded by the following
+grants:
 
-- The National Science Foundation through awards 1240655 (STAR), 1339782
-  (STORM), and 1737785 (Phylanx).
+- The National Science Foundation through awards 1339782 (STORM) and 1737785
+  (Phylanx).
 
 - The Department of Energy (DoE) through the awards DE-AC52-06NA25396 (FLeCSI)
-  and DE-NA0003525 (Resilience).
+  DE-NA0003525 (Resilience), and DE-AC05-00OR22725 (DCA++).
 
 - The Defense Technical Information Center (DTIC) under contract
-  FA8075-14-D-0002/0007
+  FA8075-14-D-0002/0007.
 
 - The Bavarian Research Foundation (Bayerische Forschungsstiftung) through the
   grant AZ-987-11.
