@@ -100,9 +100,9 @@ HPX's main goal is to
 improve efficiency and scalability of parallel applications by increasing
 resource utilization and reducing synchronization through providing an
 asynchronous API and employing adaptive scheduling. The consequent use of
-futures intrinsically enables overlap of computation and communication and
-constraint-based synchronization. HPX is able to maintain load balance among all
-the available resources resulting in significantly reducing processor
+_Futures_ intrinsically enables overlap of computation and communication and
+constraint-based synchronization. HPX is able to maintain a balanced load among 
+all the available resources resulting in significantly reducing processor
 starvation and effective latencies while controlling overheads. HPX is fully
 conforming to the C++ ISO Standards and implements the standardized concurrency
 mechanisms and parallelism facilities. Further, HPX extends those facilities to
@@ -232,8 +232,7 @@ int main()
     std::cout << sum1 << '\n';      // will print 55
 
     // Compute the sum in a parallel fashion based on a range of values
-    int sum2 = hpx::reduce(
-        hpx::execution::par, values, 0);
+    int sum2 = hpx::reduce(hpx::execution::par, values, 0);
     std::cout << sum2 << '\n';      // will print 55 as well
 
     return 0;
@@ -294,48 +293,32 @@ Please report any bugs or feature requests on the HPX's
 
 # Acknowledgments
 
-We would like to acknowledge the NSF, DoE, DTIC, DARPA, the Center for
-Computation and Technology (CCT) at Louisiana State University, The Swiss
-National Supercomputing Centre (CSCS), and the Department of Computer Science 3
-- Computer Architecture at the University of Erlangen Nuremberg who fund and
-support our work.
+We would like to acknowledge the National Science Foundation (NSF), the U.S.
+Department of Energy (DoE), the Defense Technical Information Center (DTIC),
+DARPA, the Center for Computation and Technology (CCT) at Louisiana State
+University (LSU), the Swiss National Supercomputing Centre (CSCS), the
+Department of Computer Science 3 - Computer Architecture at the University of
+Erlangen Nuremberg who fund and support our work, and the Heterogeneous System
+Architecture (HSA) Foundation.
 
 We would also like to thank the following organizations for granting us
-allocations of their compute resources: LSU HPC, LONI, XSEDE, NERSC, CSCS/ETHZ,
-and the Gauss Center for Supercomputing.
+allocations of their compute resources: LSU HPC, Louisiana Optical Network
+Iniative (LONI), the Extreme Science and Engineering Discovery Environment
+(XSEDE), the National Energy Research Scientific Computing Center (NERSC), the
+Oak Ridge Leadership Computing Facility (OLCF), Swiss National Supercomputing
+Centre (CSCS/ETHZ), the Juelich Supercomputing Centre (JSC), and the Gauss
+Center for Supercomputing.
 
-As the paper was written, HPX has been funded by:
+As the paper was written, HPX has been directly funded by the following grants:
 
 - The National Science Foundation through awards 1240655 (STAR), 1339782
   (STORM), and 1737785 (Phylanx).
 
-  Any opinions, findings, and conclusions or recommendations expressed in this
-  material are those of the author(s) and do not necessarily reflect the views
-  of the National Science Foundation.
-
 - The Department of Energy (DoE) through the awards DE-AC52-06NA25396 (FLeCSI)
   and DE-NA0003525 (Resilience).
 
-  Neither the United States Government nor any agency thereof, nor any of their
-  employees makes any warranty, express or implied, or assumes any legal
-  liability or responsibility for the accuracy, completeness, or usefulness of
-  any information, apparatus, product, or process disclosed, or represents that
-  its use would not infringe privately owned rights. Reference herein to any
-  specific commercial product, process, or service by trade name, trademark,
-  manufacturer, or otherwise does not necessarily constitute or imply its
-  endorsement, recommendation, or favoring by the United States Government or
-  any agency thereof. The views and opinions of authors expressed herein do not
-  necessarily state or reflect those of the United States Government or any
-  agency thereof.
-
 - The Defense Technical Information Center (DTIC) under contract
   FA8075-14-D-0002/0007
-
-  Neither the United States Government nor any agency thereof, nor any of their
-  employees makes any warranty, express or implied, or assumes any legal
-  liability or responsibility for the accuracy, completeness, or usefulness of
-  any information, apparatus, product, or process disclosed, or represents that
-  its use would not infringe privately owned rights.
 
 - The Bavarian Research Foundation (Bayerische Forschungsstiftung) through the
   grant AZ-987-11.
@@ -343,6 +326,8 @@ As the paper was written, HPX has been funded by:
 - The European Commission's Horizon 2020 programme through the grant
   H2020-EU.1.2.2. 671603 (AllScale).
 
-For a updated list, we refer to [HPX's website](http://hpx.stellar-group.org/funding-acknowledgements/).
+
+For a constantly updated list of previous and current funding, we refer to the 
+corresponding [HPX's website](http://hpx.stellar-group.org/funding-acknowledgements/).
 
 # References
