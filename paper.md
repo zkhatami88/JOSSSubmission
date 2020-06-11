@@ -166,11 +166,11 @@ and their references are listed below:
     from C++ code. This enables HPX to launch both CPU and GPU kernels
     as dictated by the current state of the system.
 - **Local Control Objects**
-    HPX has support for many of the C++20 primitives, such as `hpx::latch`,
-    `hpx::barrier`, and `hpx::counting_semaphore` to synchronize the code or
-    overlap computation and communication. These functions are standard conform
-    according to the C++20 [@standard2017programming]. For asynchronous computing
-    HPX provides `hpx::async` and `hpx::future`, see the second example in the
+    HPX has support for many of the C++20 primitives, such as `hpx::latch`, 
+    `hpx::barrier`, and `hpx::counting_semaphore` to synchronize the code or 
+    overlap computation and communication. These functions are standard conform 
+    according to the C++20 [@standard2020programming]. For asynchronous computing 
+    HPX provides `hpx::async` and `hpx::future`, see the second example in the 
     next section.
 - **Software Resilience**
     HPX supports software level resilience [@gupta2020implementing] through its
@@ -219,11 +219,13 @@ int main()
     std::vector<int> values = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
     // Compute the sum in a sequential fashion
-    int sum1 = hpx::reduce(hpx::execution::seq, values.begin(), values.end(), 0);
+    int sum1 = hpx::reduce(
+        hpx::execution::seq, values.begin(), values.end(), 0);
     std::cout << sum1 << '\n';      // will print 55
 
     // Compute the sum in a parallel fashion based on a range of values
-    int sum2 = hpx::reduce(hpx::execution::par, values, 0);
+    int sum2 = hpx::reduce(
+        hpx::execution::par, values, 0);
     std::cout << sum2 << '\n';      // will print 55 as well
 
     return 0;
@@ -247,17 +249,17 @@ output stream.
 
 ```cpp
 #include <hpx/include/future.hpp>
-#include <cstddef>
 #include <cmath>
 #include <iostream>
 
 // Define the partial taylor function
-double taylor(std::size_t begin, std::size_t end, std::size_t n, double x)
+double taylor(size_t begin, size_t end, size_t n, double x)
 {
+    double denom = factorial(2 * n);
     double res = 0;
-    for (std::size_t i = begin; i != end; ++i)
+    for (size_t i = begin; i != end; ++i)
     {
-        res += std::pow(-1, i - 1) * std::pow(x, 2 * n) / factorial(2 * n);
+        res += std::pow(-1, i - 1) * std::pow(x, 2 * n) / denom;
     }
     return res;
 }
@@ -265,7 +267,7 @@ double taylor(std::size_t begin, std::size_t end, std::size_t n, double x)
 int main()
 {
     // Compute the Talor series sin(2.0) for 100 iterations
-    std::size_t n = 100;
+    size_t n = 100;
 
     // Launch two concurrent computations of each partial result
     hpx::future<double> f1 = std::async(taylor, 0, n / 2, n, 2.);
