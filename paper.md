@@ -89,7 +89,14 @@ developers with a productive and performant approach to programming on next
 generation systems. HPX is a C++ Library for Concurrency and Parallelism that is
 developed by The STE||AR Group, an international group of collaborators working
 in the field of distributed and parallel programming
-[@heller2017hpx;@hpx_github; @tabbal2011preliminary]. HPX's main goal is to
+[@heller2017hpx;@hpx_github;@tabbal2011preliminary]. It is a runtime system
+written using modern C++ techniques that is linked as part of an application.
+HPX exposes extended services and functionalities supporting the implementation
+of parallel, concurrent, and distributed capabilities for applications in any
+domain - it has been used in scientific computing, gaming, finances, data
+mining, and other fields.
+
+HPX's main goal is to
 improve efficiency and scalability of parallel applications by increasing
 resource utilization and reducing synchronization through providing an
 asynchronous API and employing adaptive scheduling. The consequent use of
@@ -100,13 +107,14 @@ starvation and effective latencies while controlling overheads. HPX is fully
 conforming to the C++ ISO Standards and implements the standardized concurrency
 mechanisms and parallelism facilities. Further, HPX extends those facilities to
 distributed use cases, thus enabling syntactic and semantic equivalence of local
-and remote operation on the API level. HPX uses the C++ future to transform
-sequential tasks into wait-free asynchronous executions. Futurization results in
-data flow execution trees of potentially millions of lightweight HPX tasks
-executed in the
+and remote operations on the API level. HPX uses the concept of C++ _Futures_ to 
+transform sequential algorithms into wait-free asynchronous executions. 
+The use of _Futurization_ enables the automatic creation of dynamic data flow 
+execution trees of potentially millions of lightweight HPX tasks executed in the
 proper order. HPX also provides a work-stealing task scheduler that takes care
-of fine-grained parallelizations. Furthermore, HPX implements functionalities
-proposed as part of the ongoing C++ standardization process.
+of fine-grained parallelizations and automatic load balancing. Furthermore, 
+HPX implements functionalities proposed as part of the ongoing C++ 
+standardization process.
 
 ![Sketch of HPX's architecture with all the components and their interactions.\label{fig:architecture}](hpx_architecture.pdf)
 
@@ -127,7 +135,7 @@ and their references are listed below:
     execution. Unlike PGAS, AGAS provides the user with the ability to
     transparently move global objects in a distributed system. This enables AGAS
     to support load balancing via object migration.
-- **Parcel Transport Layer** [@kaiser2009parallex; @biddiscombe2017zero]
+- **Parcel Transport Layer** [@kaiser2009parallex;@biddiscombe2017zero]
     This component is an active-message networking layer.
     The parcelport is able to leverage AGAS in order to
     launch functions on global objects regardless of their current placement
