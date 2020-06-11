@@ -75,7 +75,7 @@ affiliations:
    index: 7
  - name: Oregon Advanced Computing Institute for Science and Society (OACISS), University of Oregon
    index: 8
-date: 28.05.2020
+date: 11.06.2020
 bibliography: paper.bib
 ---
 
@@ -89,24 +89,32 @@ developers with a productive and performant approach to programming on next
 generation systems. HPX is a C++ Library for Concurrency and Parallelism that is
 developed by The STE||AR Group, an international group of collaborators working
 in the field of distributed and parallel programming
-[@heller2017hpx;@hpx_github; @tabbal2011preliminary]. HPX's main goal is to
+[@heller2017hpx;@hpx_github;@tabbal2011preliminary]. It is a runtime system
+written using modern C++ techniques that is linked as part of an application.
+HPX exposes extended services and functionalities supporting the implementation
+of parallel, concurrent, and distributed capabilities for applications in any
+domain - it has been used in scientific computing, gaming, finances, data
+mining, and other fields.
+
+HPX's main goal is to
 improve efficiency and scalability of parallel applications by increasing
 resource utilization and reducing synchronization through providing an
 asynchronous API and employing adaptive scheduling. The consequent use of
-futures intrinsically enables overlap of computation and communication and
-constraint-based synchronization. HPX is able to maintain load balance among all
-the available resources resulting in significantly reducing processor
+_Futures_ intrinsically enables overlap of computation and communication and
+constraint-based synchronization. HPX is able to maintain a balanced load among 
+all the available resources resulting in significantly reducing processor
 starvation and effective latencies while controlling overheads. HPX is fully
 conforming to the C++ ISO Standards and implements the standardized concurrency
 mechanisms and parallelism facilities. Further, HPX extends those facilities to
 distributed use cases, thus enabling syntactic and semantic equivalence of local
-and remote operation on the API level. HPX uses the C++ future to transform
-sequential tasks into wait-free asynchronous executions. Futurization results in
-data flow execution trees of potentially millions of lightweight HPX tasks
-executed in the
+and remote operations on the API level. HPX uses the concept of C++ _Futures_ to 
+transform sequential algorithms into wait-free asynchronous executions. 
+The use of _Futurization_ enables the automatic creation of dynamic data flow 
+execution trees of potentially millions of lightweight HPX tasks executed in the
 proper order. HPX also provides a work-stealing task scheduler that takes care
-of fine-grained parallelizations. Furthermore, HPX implements functionalities
-proposed as part of the ongoing C++ standardization process.
+of fine-grained parallelizations and automatic load balancing. Furthermore, 
+HPX implements functionalities proposed as part of the ongoing C++ 
+standardization process.
 
 ![Sketch of HPX's architecture with all the components and their interactions.\label{fig:architecture}](hpx_architecture.pdf)
 
@@ -127,7 +135,7 @@ and their references are listed below:
     execution. Unlike PGAS, AGAS provides the user with the ability to
     transparently move global objects in a distributed system. This enables AGAS
     to support load balancing via object migration.
-- **Parcel Transport Layer** [@kaiser2009parallex; @biddiscombe2017zero]
+- **Parcel Transport Layer** [@kaiser2009parallex;@biddiscombe2017zero]
     This component is an active-message networking layer.
     The parcelport is able to leverage AGAS in order to
     launch functions on global objects regardless of their current placement
@@ -166,20 +174,20 @@ and their references are listed below:
     from C++ code. This enables HPX to launch both CPU and GPU kernels
     as dictated by the current state of the system.
 - **Local Control Objects**
-    HPX has support for many of the C++20 primitives, such as `hpx::latch`,
-    `hpx::barrier`, and `hpx::counting_semaphore` to synchronize the code or
-    overlap computation and communication. These functions are standard conform
-    according to the C++20 [@standard2017programming]. For asynchronous computing
-    HPX provides `hpx::async` and `hpx::future`, see the second example in the
+    HPX has support for many of the C++20 primitives, such as `hpx::latch`, 
+    `hpx::barrier`, and `hpx::counting_semaphore` to synchronize the code or 
+    overlap computation and communication. These functions are standard conform 
+    according to the C++20 [@standard2020programming]. For asynchronous computing 
+    HPX provides `hpx::async` and `hpx::future`, see the second example in the 
     next section.
 - **Software Resilience**
     HPX supports software level resilience [@gupta2020implementing] through its
     resiliency API, such as `hpx::async_replay` and `hpx::async_replicate` and
     its dataflow counterparts `hpx::dataflow_replay` and
     `hpx::dataflow_replicate`. These APIs are resilient against memory bit
-    flips and processor inaccuracies.
-    HPX provides an easy method to port to resilient API by replacing
-    `hpx::async` or `hpx::dataflow` with its resilient API counterpart everywhere
+    flips and other hardware errors.
+    HPX provides an easy method to port codes to the resilient API by replacing
+    `hpx::async` or `hpx::dataflow` with its resilient API counterparts everywhere
     in the code without making any other changes.
 - **C++ Standards conforming API**
     HPX implements all of the C++17 parallel algorithms [@standard2017programming]
@@ -188,7 +196,9 @@ and their references are listed below:
     extension) their asynchronous equivalents
     `hpx::execution::seq(hpx::execution::task)` and
     `hpx::execution::par(hpx::execution::task)` (see the first code example
-    in the next section).
+    in the next section). HPX also implements the C++20 
+    concurrency facilities and APIs [@standard2020programming], such as
+    `hpx::jthread`, `hpx::latch`, `hpx::barrier`, etc.
 
 HPX is utilized in a diverse set of applications: Octo-Tiger [@daiss2019piz;
 @heller2019harnessing; @pfander2018accelerating], an astrophysics code for
@@ -210,7 +220,7 @@ will execute the algorithm in parallel.
 HPX's parallel algorithm library API is completely standards conforming.
 
 ```cpp
-#include <hpx/include/parallel_reduce.hpp>
+#include <hpx/hpx.hpp>
 #include <iostream>
 #include <vector>
 
@@ -219,7 +229,8 @@ int main()
     std::vector<int> values = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
     // Compute the sum in a sequential fashion
-    int sum1 = hpx::reduce(hpx::execution::seq, values.begin(), values.end(), 0);
+    int sum1 = hpx::reduce(
+        hpx::execution::seq, values.begin(), values.end(), 0);
     std::cout << sum1 << '\n';      // will print 55
 
     // Compute the sum in a parallel fashion based on a range of values
@@ -246,18 +257,18 @@ yet, the current thread is suspended until the result is ready. Only if
 output stream.
 
 ```cpp
-#include <hpx/include/future.hpp>
-#include <cstddef>
+#include <hpx/hpx.hpp>
 #include <cmath>
 #include <iostream>
 
 // Define the partial taylor function
-double taylor(std::size_t begin, std::size_t end, std::size_t n, double x)
+double taylor(size_t begin, size_t end, size_t n, double x)
 {
+    double denom = factorial(2 * n);
     double res = 0;
-    for (std::size_t i = begin; i != end; ++i)
+    for (size_t i = begin; i != end; ++i)
     {
-        res += std::pow(-1, i - 1) * std::pow(x, 2 * n) / factorial(2 * n);
+        res += std::pow(-1, i - 1) * std::pow(x, 2 * n) / denom;
     }
     return res;
 }
@@ -265,7 +276,7 @@ double taylor(std::size_t begin, std::size_t end, std::size_t n, double x)
 int main()
 {
     // Compute the Talor series sin(2.0) for 100 iterations
-    std::size_t n = 100;
+    size_t n = 100;
 
     // Launch two concurrent computations of each partial result
     hpx::future<double> f1 = std::async(taylor, 0, n / 2, n, 2.);
@@ -284,48 +295,33 @@ Please report any bugs or feature requests on the HPX's
 
 # Acknowledgments
 
-We would like to acknowledge the NSF, DoE, DTIC, DARPA, the Center for
-Computation and Technology (CCT) at Louisiana State University, The Swiss
-National Supercomputing Centre (CSCS), and the Department of Computer Science 3
-- Computer Architecture at the University of Erlangen Nuremberg who fund and
-support our work.
+We would like to acknowledge the National Science Foundation (NSF), the U.S.
+Department of Energy (DoE), the Defense Technical Information Center (DTIC), the
+Defense Advanced Research Projects Agency (DARPA), the Center for Computation
+and Technology (CCT) at Louisiana State University (LSU), the Swiss National
+Supercomputing Centre (CSCS), the Department of Computer Science 3 - Computer
+Architecture at the University of Erlangen Nuremberg who fund and support our
+work, and the Heterogeneous System Architecture (HSA) Foundation.
 
 We would also like to thank the following organizations for granting us
-allocations of their compute resources: LSU HPC, LONI, XSEDE, NERSC, CSCS/ETHZ,
-and the Gauss Center for Supercomputing.
+allocations of their compute resources: LSU HPC, Louisiana Optical Network
+Iniative (LONI), the Extreme Science and Engineering Discovery Environment
+(XSEDE), the National Energy Research Scientific Computing Center (NERSC), the
+Oak Ridge Leadership Computing Facility (OLCF), Swiss National Supercomputing
+Centre (CSCS/ETHZ), the Juelich Supercomputing Centre (JSC), and the Gauss
+Center for Supercomputing.
 
-As the paper was written, HPX has been funded by:
+At the time the paper was written, HPX was directly funded by the following
+grants:
 
-- The National Science Foundation through awards 1240655 (STAR), 1339782
-  (STORM), and 1737785 (Phylanx).
-
-  Any opinions, findings, and conclusions or recommendations expressed in this
-  material are those of the author(s) and do not necessarily reflect the views
-  of the National Science Foundation.
+- The National Science Foundation through awards 1339782 (STORM) and 1737785
+  (Phylanx).
 
 - The Department of Energy (DoE) through the awards DE-AC52-06NA25396 (FLeCSI)
-  and DE-NA0003525 (Resilience).
-
-  Neither the United States Government nor any agency thereof, nor any of their
-  employees makes any warranty, express or implied, or assumes any legal
-  liability or responsibility for the accuracy, completeness, or usefulness of
-  any information, apparatus, product, or process disclosed, or represents that
-  its use would not infringe privately owned rights. Reference herein to any
-  specific commercial product, process, or service by trade name, trademark,
-  manufacturer, or otherwise does not necessarily constitute or imply its
-  endorsement, recommendation, or favoring by the United States Government or
-  any agency thereof. The views and opinions of authors expressed herein do not
-  necessarily state or reflect those of the United States Government or any
-  agency thereof.
+  DE-NA0003525 (Resilience), and DE-AC05-00OR22725 (DCA++).
 
 - The Defense Technical Information Center (DTIC) under contract
-  FA8075-14-D-0002/0007
-
-  Neither the United States Government nor any agency thereof, nor any of their
-  employees makes any warranty, express or implied, or assumes any legal
-  liability or responsibility for the accuracy, completeness, or usefulness of
-  any information, apparatus, product, or process disclosed, or represents that
-  its use would not infringe privately owned rights.
+  FA8075-14-D-0002/0007.
 
 - The Bavarian Research Foundation (Bayerische Forschungsstiftung) through the
   grant AZ-987-11.
@@ -333,6 +329,8 @@ As the paper was written, HPX has been funded by:
 - The European Commission's Horizon 2020 programme through the grant
   H2020-EU.1.2.2. 671603 (AllScale).
 
-For a updated list, we refer to [HPX's website](http://hpx.stellar-group.org/funding-acknowledgements/).
+
+For a constantly updated list of previous and current funding, we refer to the 
+corresponding [HPX's website](http://hpx.stellar-group.org/funding-acknowledgements/).
 
 # References
