@@ -218,7 +218,7 @@ will execute the algorithm in parallel.
 HPX's parallel algorithm library API is completely standards conforming.
 
 ```cpp
-#include <hpx/include/parallel_reduce.hpp>
+#include <hpx/hpx.hpp>
 #include <iostream>
 #include <vector>
 
@@ -255,7 +255,7 @@ yet, the current thread is suspended until the result is ready. Only if
 output stream.
 
 ```cpp
-#include <hpx/include/future.hpp>
+#include <hpx/hpx.hpp>
 #include <cmath>
 #include <iostream>
 
@@ -309,7 +309,7 @@ Oak Ridge Leadership Computing Facility (OLCF), Swiss National Supercomputing
 Centre (CSCS/ETHZ), the Juelich Supercomputing Centre (JSC), and the Gauss
 Center for Supercomputing.
 
-At the time the paper was written, HPX has been directly funded by the following
+At the time the paper was written, HPX was directly funded by the following
 grants:
 
 - The National Science Foundation through awards 1339782 (STORM) and 1737785
